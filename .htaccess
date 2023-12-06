@@ -31,4 +31,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* siteroot/index.php 
 
-#RewriteRule ^$ siteroot/ [L]
+RewriteRule ^$ siteroot/ [L]
