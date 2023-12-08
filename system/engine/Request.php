@@ -13,7 +13,7 @@ class Request{
     }
 
     public function getUrl(){
-        // $this->prepareRequest();
+        $this->prepareRequest();
         $uriString = filter_var(rtrim($_SERVER['REQUEST_URI'], '/'), FILTER_SANITIZE_URL);
         $position = strpos($uriString, '?');
         $path = $position !== false ? substr($uriString, 0, $position) : $uriString;

@@ -66,7 +66,7 @@ if (file_exists(ABSPATH.'system'.DS.'functions.php')) {
 else{
 	die('No required file (functions.php) found. Stopped.');
 }
-echo ENVIRONMENT;
+
 if(ENVIRONMENT == 'development'){
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
@@ -77,16 +77,6 @@ else{
 	ini_set('display_startup_errors', 0);
 	error_reporting(0);
 }
-
-//errors handler
-// if(file_exists(PATH_ENGINE.'Errorhandler.php')){
-//     require_once PATH_ENGINE.'Errorhandler.php';
-// }
-// else{
-// 	die('No required file (Errorhandler.php) found. Stopped.');
-// }
-
-// $error = new \Templater\System\Engine\ErrorHandler();
 
 require_once(PATH_SYSTEM . 'Autoloader.php');
 

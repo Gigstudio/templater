@@ -29,14 +29,25 @@ class Router{
     }
 
     public function getController($url){
+        $url = str_replace(SITE_SHORT_NAME, 'Home', $url);
         return $url[0] ?? 'Home';
+    }
+
+    public function getAction($url){
+        return $url[1] ?? 'index';
+    }
+
+    public function getCallback(){
+        
     }
 
     public function resolve(){
         $url = $this->request->getUrl();
         $this->controller = $this->getController($url);
+        $this->action = $this->getAction($url);
+
         show($this);
-        die;
+        // die;
 
     }
 }
