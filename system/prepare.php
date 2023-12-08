@@ -8,17 +8,6 @@ if (!defined('ABSPATH')){
 	define('ABSPATH',dirname( __DIR__) . DS );
 }
 
-if(ENVIRONMENT == 'development'){
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-}
-else{
-	ini_set('display_errors', 0);
-	ini_set('display_startup_errors', 0);
-	error_reporting(0);
-}
-
 if (!ini_get('date.timezone')) {
 	date_default_timezone_set('UTC');
 }
@@ -76,6 +65,17 @@ if (file_exists(ABSPATH.'system'.DS.'functions.php')) {
 }
 else{
 	die('No required file (functions.php) found. Stopped.');
+}
+echo ENVIRONMENT;
+if(ENVIRONMENT == 'development'){
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+}
+else{
+	ini_set('display_errors', 0);
+	ini_set('display_startup_errors', 0);
+	error_reporting(0);
 }
 
 //errors handler
