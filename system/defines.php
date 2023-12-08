@@ -10,6 +10,8 @@ $base_url_level = 2;
 defined('APPLICATION') or 		define('APPLICATION', 'Templater');
 
 defined('PATH_ROOT') or 		define('PATH_ROOT', implode(DS, $parts));
+defined('PATH_CONFIG') or 		define('PATH_CONFIG', PATH_ROOT.'config'.DS);
+defined('PATH_PLUGINS') or 		define('PATH_PLUGINS', PATH_ROOT.'plugins'.DS);
 defined('PATH_SYSTEM') or 		define('PATH_SYSTEM', PATH_ROOT.'system'.DS);
 defined('PATH_ENGINE') or 		define('PATH_ENGINE', PATH_SYSTEM.'engine'.DS);
 defined('PATH_PAGES') or 		define('PATH_PAGES', PATH_ROOT.'pages'.DS);
