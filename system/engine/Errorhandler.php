@@ -91,6 +91,7 @@ class Errorhandler{
     }
 
     public function setError(string $code){
+		http_response_code($code);
         $this->er_code = $code;
         $this->er_msg = $this->getMessage($code);
     }

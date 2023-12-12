@@ -53,18 +53,18 @@ if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 	$_SERVER['REMOTE_ADDR'] = $_SERVER['HTTP_CLIENT_IP'];
 }
 
-if (file_exists(ABSPATH.'system'.DS.'defines.php')) {
-    require_once ABSPATH.'system'.DS.'defines.php';
-}
-else{
-	die('No required file (defines.php) found. Stopped.');
-}
-
 if (file_exists(ABSPATH.'system'.DS.'functions.php')) {
     require_once ABSPATH.'system'.DS.'functions.php';
 }
 else{
 	die('No required file (functions.php) found. Stopped.');
+}
+
+if (file_exists(ABSPATH.'system'.DS.'defines.php')) {
+    require_once ABSPATH.'system'.DS.'defines.php';
+}
+else{
+	die('No required file (defines.php) found. Stopped.');
 }
 
 if(ENVIRONMENT == 'development'){

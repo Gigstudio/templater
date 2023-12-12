@@ -38,16 +38,38 @@ class Router{
     }
 
     public function getCallback(){
-        
+
     }
 
     public function resolve(){
+        $method = $this->request->getMethod();
         $url = $this->request->getUrl();
-        $this->controller = $this->getController($url);
-        $this->action = $this->getAction($url);
+        $callback = $this->routeMap[$method][$url] ?? false;
 
-        show($this);
-        // die;
+        if(!$callback){
+            throw new \Exception('Not found', 404);
+        }
+        
+        if(is_array($callback)){
+			if(!class_exists($callback[0])){
+				throw new \Exception('Контроллер '.$callback[0].' не найден', 404);
+			}
+			$controller = new $callback[0]();
+			$controller->action = $callback[1];
+			$callback[0] = $controller;
+		}
+
+		if(is_callable($callback)){
+			return call_user_func($callback, $this->request, $this->response);
+		}
+		else{
+			throw new \Exception("Страница $callback[1] не найдена", 404);
+		}
+       // $this->controller = $callback[0];
+        // $this->action = $callback[1];
+
+        show($url);
+        show($callback);
 
     }
 }

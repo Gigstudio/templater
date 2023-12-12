@@ -8,6 +8,7 @@
     Header always set X-Content-Type-Options "nosniff"
 </IfModule>
 
+## Can be commented out if causes errors, see notes above.
 ####Options +FollowSymlinks
 Options -Indexes
 
@@ -20,15 +21,18 @@ Options -Indexes
 
 RewriteEngine On
 
+RewriteBase /
+
 RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
 RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
 RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
 RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
-RewriteRule .* siteroot/index.php [R=301,F]
+RewriteRule .* index.php [R=301,F]
+
+RewriteCond %{REQUEST_URI} !^/templater/siteroot/
+RewriteRule ^(.*)$ /templater/siteroot/$1 [L]
 
 RewriteCond %{REQUEST_URI} !^/index\.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule .* siteroot/index.php 
-
-RewriteRule ^$ siteroot/ [L]
+RewriteRule .* index.php 

@@ -17,8 +17,7 @@ class Request{
         $uriString = filter_var(rtrim($_SERVER['REQUEST_URI'], '/'), FILTER_SANITIZE_URL);
         $position = strpos($uriString, '?');
         $path = $position !== false ? substr($uriString, 0, $position) : $uriString;
-        $parsed = explode('/', rtrim(preg_replace('/(.php|.html|)/i', '', $path),'/'));
-		return $parsed;
+        return rtrim(preg_replace('/(.php|.html|)/i', '', $path),'/');
     }
 
     public function getQueryParams(){

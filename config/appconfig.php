@@ -1,5 +1,5 @@
 <?php
-$appsettings = [
+$settings = [
     'sitetitle'         => 'Templater',
     'sitedescription'   => 'Редактор шаблонов наградительных документов',
     'default_language'  => 'ru',

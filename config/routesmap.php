@@ -1,6 +1,15 @@
 <?php
+use Templater\Controllers\Home;
+use Templater\Controllers\Auth;
+use Templater\Controllers\Workspace;
+use Templater\Controllers\Edit;
+use Templater\Controllers\Store;
+use Templater\Controllers\Admin;
+
 $get = [
-    SITE_SHORT_NAME.'/'             => [Home::class, 'home'],
+    SITE_SHORT_NAME                 => [Home::class, 'index'],
+    SITE_SHORT_NAME.'/home'         => [Home::class, 'index'],
+    SITE_SHORT_NAME.'/index'        => [Home::class, 'index'],
     SITE_SHORT_NAME.'/plans'        => [Home::class, 'plans'],
     SITE_SHORT_NAME.'/payments'     => [Home::class, 'payments'],
     SITE_SHORT_NAME.'/terms'        => [Home::class, 'terms'],
