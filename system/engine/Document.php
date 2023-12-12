@@ -59,7 +59,7 @@ class Document{
 	        $path = PATH_ASSETS . 'js/' . $file;
 	        if(file_exists($path)){
 	            $src = HOME_URL . 'assets/js/' . $file;
-	            $ins .= "&lt;script&nbsp;type=\"text/javascript\" src=\"$src?r\"&gt;&lt;/script&gt\n";
+	            $ins .= "&lt;script&nbsp;type=\"text/javascript\" src=\"$src\"&gt;&lt;/script&gt\n";
 	        }
 	    }
 	    return $ins;
@@ -80,7 +80,7 @@ class Document{
 	        $path = PATH_ASSETS . $file;
 	        if(file_exists($path)){
 	            $src = 'assets/' . $file;
-	            $ins .= "&lt;link href=\"$src?r\" rel=\"stylesheet\"&gt;\n";
+	            $ins .= "&lt;link href=\"$src\" rel=\"stylesheet\"&gt;\n";
 	        }
 	    }
 	    return $ins;
@@ -98,7 +98,7 @@ class Document{
             $ins .= "$selector{\n";
             if(is_array($style)){
                 foreach($style as $k => $v){
-                    $ins .= "$k: $v;\n";
+                    $ins .= "\t$k: $v;\n";
                 }
             }
             $ins .= "}\n";

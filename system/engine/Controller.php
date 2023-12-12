@@ -39,6 +39,39 @@ class Controller{
         $this->data['add_js'] = Application::$app->doc->getScript();
         $this->data['add_style'] = Application::$app->doc->getInlineStyles();
         $this->data['site_icon']  = HOME_URL . 'assets/images/' . SITE_ICON_FILE;
+
+        // get layout
+        return $this->getLayout('header');
+        // return $this->composeView($layout);
+        // show($layout);
+    }
+
+    public function getLayout($name){
+        $file = PATH_LAYOUTS . $name . '.php';
+        if(!file_exists($file)){
+			$t=time();
+			trigger_error(date("H:i:s",$t).": Схема $name не найдена.", Errorhandler::EL_INFO);
+            return '';
+        }
+        ob_start();
+        include_once $file;
+        $content = ob_get_clean();
+        return $content;
+    }
+
+    public function composeView($layout){
+        while($startpos = strpos($layout, '{{')){
+            $endpos = strpos($layout, '}}');
+            if($endpos){
+                $length = $endpos - $startpos;
+                $key = substr($layout, $startpos+2, $length-2);
+                $ins = array_key_exists($key, $this->data) ? $this->data[$key] : '';
+                $layout = substr_replace($layout, $ins, $startpos, $length+2);
+            }
+        }
+        // show($layout);
+        return $layout;
+        // return $content;
     }
 
     public function load_controller($file, $method, $data = []){
@@ -46,8 +79,8 @@ class Controller{
         $class = 'Templater\Controllers\\' . ucfirst($file);
         if(!file_exists($path)){
             throw new \Exception("Контроллер $file не найден", 404);
+            exit;
         }
-        // include_once $path;
         $block = new $class($data);
         $content = is_callable([$block, $method]) ? call_user_func([$block, $method]) : '';
         // show((bool)is_callable([$block, $method]));
@@ -69,23 +102,16 @@ class Controller{
     }
 
     public function render($data = [], $view = ''){
-        // show($data);
         $file = !$view || $view === $this->layout ? PATH_LAYOUTS . "$this->layout.php" : PATH_VIEWS . "$view.php";
         $layout = $this->load_HTML($file);
-        // return $layout;
         while($startpos = strpos($layout, '{{')){
             $endpos = strpos($layout, '}}');
             if($endpos){
                 $length = $endpos - $startpos;
                 $key = substr($layout, $startpos+2, $length-2);
                 $ins = array_key_exists($key, $data) ? $data[$key] : '';
+                // show($key);
                 // show($ins);
-                // if(array_key_exists($key, $data)){
-                //     $ins = $data[$key];
-                // }
-                // else{
-                //     echo "$key not exists<br>";
-                // }
                 $layout = substr_replace($layout, ltrim($ins), $startpos, $length+2);
             }
         }

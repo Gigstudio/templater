@@ -11,7 +11,7 @@ class Home extends Controller{
     }
 
     public function index(){
-        $this->views['header'] = $this->composeHeader();
+        // echo $this->views['header'];
         // 1. compose header
         // 2. create top menu
         // 3. create user menu
@@ -24,7 +24,8 @@ class Home extends Controller{
         // 10. get layout
         // 11. replace all {{vars}} with code if exist
 
-        // return $this->render($this->views);
+        return $this->render($this->views);
+        // show($this->views);
     }
 
     private function pagesetup(){

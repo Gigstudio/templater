@@ -20,7 +20,6 @@ class Header extends Controller{
         // show($this->data);
         // show('Header render in Header controller');
         $content = file_exists(PATH_VIEWS . "header.php") ? $this->render($this->data, 'header') : "";
-        // show($content);
         return $content;
 	}
 }

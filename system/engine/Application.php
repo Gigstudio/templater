@@ -30,6 +30,7 @@ class Application{
         // show($this);
         $content = $this->router->resolve();
         $this->show($content ?? '');
+        
     }
 
 	public function show(string $content){
