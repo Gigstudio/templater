@@ -1,0 +1,52 @@
+font-family: 'Alterna Titul 3D', sans-serif;
+font-family: 'Rewinder Demi Shadow', sans-serif;
+font-family: 'Signboard Caps', serif;
+    font-family: 'Advent Pro', sans-serif;
+font-family: 'Amatic SC', sans-serif;
+font-family: 'Appetite New', serif;
+font-family: 'Ariadna Script', cursive;
+    font-family: 'Arsenal', sans-serif;
+font-family: 'Astro', sans-serif;
+    font-family: 'Bad Script', cursive;
+font-family: 'Buyan', sans-serif;
+font-family: 'Cancellarist', cursive;
+font-family: 'Caveat', cursive;
+    font-family: 'Cimero Pro', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
+font-family: 'Cormorant_Garamond', serif;
+font-family: 'Dusha', sans-serif;
+font-family: 'El Messiri', serif;
+font-family: 'Fairy Muffin', sans-serif;
+font-family: 'Favorit', cursive;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Forum', serif;
+font-family: 'Gentium Plus', serif;
+font-family: 'Heinrich Script', cursive;
+font-family: 'Favorit', cursive;
+font-family: 'Kablammo', cursive;
+font-family: 'KB Year', sans-serif;
+font-family: 'Kelly Slab', serif;
+font-family: 'Marck Script', cursive;
+font-family: 'Neucha', sans-serif;
+font-family: 'Nunito Sans', sans-serif;
+font-family: 'Oi', cursive;
+font-family: 'Old Rosa', cursive;
+font-family: 'Pacifico', cursive;
+font-family: 'Pangolin', sans-serif;
+font-family: 'Pero', cursive;
+font-family: 'Poetica Romance', cursive;
+font-family: 'Prospect', cursive;
+font-family: 'PT Serif', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Rubik Dirt', cursive;
+font-family: 'Sofia Sans', sans-serif;
+font-family: 'Songer', sans-serif;
+font-family: 'Veronica Script', cursive;
+font-family: 'Victorian Gothic', cursive;
+
+black           900
+bold            600
+medium          500
+regular         400
+light           200
+thin            100

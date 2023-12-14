@@ -14,7 +14,7 @@
 		<div class="part right">
 			<div class="menu-holder" id="operate_links">
 				<?php if(!isset($this->data['user']) || $this->data['user']['access_id'] == 5){ ?>
-				<a href="<?=HOME_URL.'login'?>" class="menu-item" id="login" title="Вход/Регистрация">
+				<a href="<?=HOME_URL.'login'?>" class="button" id="login" title="Вход/Регистрация">
 					<span>Вход</span>
 					<i class="fa-solid fa-right-to-bracket"></i>
 				</a>

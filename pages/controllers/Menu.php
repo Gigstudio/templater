@@ -12,6 +12,11 @@ class Menu extends Controller{
         return $content;
 	}
 
+    public function errormenu(){
+        $content = file_exists(PATH_VIEWS . "errormenu.php") ? $this->render($this->data, 'errormenu') : "";
+        return $content;
+    }
+
     public function toplogin(){
         $content = file_exists(PATH_VIEWS . "toplogin.php") ? $this->render($this->data, 'toplogin') : "";
         return $content;

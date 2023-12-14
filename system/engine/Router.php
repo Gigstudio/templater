@@ -43,7 +43,7 @@ class Router{
         $callback = $this->routeMap[$method][$url] ?? false;
 
         if(!$callback){
-            throw new \Exception('Not found', 404);
+            throw new \Exception('Page not found', 404);
         }
         
         if(is_array($callback)){

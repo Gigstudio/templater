@@ -5,8 +5,10 @@ use Templater\Controllers\Workspace;
 use Templater\Controllers\Edit;
 use Templater\Controllers\Store;
 use Templater\Controllers\Admin;
+use Templater\Controllers\Service;
 
 $get = [
+    SITE_SHORT_NAME.'/construction' => [Home::class, 'construction'],
     SITE_SHORT_NAME                 => [Home::class, 'index'],
     SITE_SHORT_NAME.'/home'         => [Home::class, 'index'],
     SITE_SHORT_NAME.'/index'        => [Home::class, 'index'],
@@ -22,11 +24,11 @@ $get = [
     SITE_SHORT_NAME.'/cooperation'  => [Home::class, 'cooperation'],
     SITE_SHORT_NAME.'/bankdetails'  => [Home::class, 'bankdetails'],
     SITE_SHORT_NAME.'/feedback'     => [Home::class, 'feedback'],
-    SITE_SHORT_NAME.'/login'        => [Auth::class, 'login'],
+    // SITE_SHORT_NAME.'/login'        => [Auth::class, 'login'],
 ];
 $post = [
     SITE_SHORT_NAME.'/feedback'     => [Home::class, 'feedback'],
-    SITE_SHORT_NAME.'/login'        => [Auth::class, 'login'],
+    // SITE_SHORT_NAME.'/login'        => [Auth::class, 'login'],
 ];
 // $routes = [
 //     ['get',	SITE_SHORT_NAME.'/', [Home::class, 'home']],

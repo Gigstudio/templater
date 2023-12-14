@@ -1,6 +1,6 @@
 :root{
 /* half opacity */
-    --t01: #ffffffE0;
+    --t01: #ffffff90;
     --t02: #e9dfd9BB;
     --t03: #665a52DD;
     --t04: #e9214a77;
@@ -41,4 +41,5 @@
     --c25: #aaaaaa;
     --c26: #98a6be;
     --c27: #e1e7f1;
+    --c28: #0f4b57;
 }

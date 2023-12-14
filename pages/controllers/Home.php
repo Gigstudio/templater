@@ -7,10 +7,29 @@ use Templater\System\Engine\Application;
 
 class Home extends Controller{
     public function __construct(){
+        // $pars = Application::$app->request->getQueryParams();
         $this->pagesetup();
+        // dump($this->views);
     }
 
-    public function index(){
+    public function construction(){
+        $this->setLayout('error');
+        $this->data['errimage'] = '';
+        $this->data['errcode'] = '403';
+        // Use language here! Dont hardcode!
+        $this->data['errmessage'] = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+        $this->views['errormenu'] = $this->load_controller('menu', 'errormenu', $this->data);
+        return $this->render($this->views);
+        // exit;
+    }
+
+    public function index($request){
+        $pars = $request->getQueryParams();
+        if(!array_key_exists('check',$pars)){
+            header("Location: construction");
+            // $this->construction();
+            // exit;
+        }
         // echo $this->views['header'];
         // 1. compose header
         // 2. create top menu
@@ -23,6 +42,11 @@ class Home extends Controller{
         // 9. create bottom menu
         // 10. get layout
         // 11. replace all {{vars}} with code if exist
+
+        $this->views['topmenu'] = $this->load_controller('menu', 'topmenu', $this->data);
+        // $this->views['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
+        // $this->views['mainmenu'] = $this->load_controller('menu', 'mainmenu', $this->data);
+        // $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
 
         return $this->render($this->views);
         // dump($this->views);
@@ -59,7 +83,7 @@ class Home extends Controller{
         Application::$app->doc->addScript($add_js);
 
         $this->views['header'] = $this->load_controller('header', 'common', $this->data);
-        $this->views['topmenu'] = $this->load_controller('menu', 'topmenu', $this->data);
+        // $this->views['topmenu'] = $this->load_controller('menu', 'topmenu', $this->data);
         // $this->views['mainmenu'] = $this->load_controller('menu', 'mainmenu', $this->data);
         // $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
 
