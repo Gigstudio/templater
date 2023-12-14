@@ -19,7 +19,7 @@ class Controller{
     public function load_model($model){
         $model = ucfirst(strtolower($model));
         if(file_exists(PATH_MODELS . $model . ".php")){
-            $class = 'Cmgift\Models\\'.$model;
+            $class = 'Templater\Models\\'.$model;
             include_once PATH_MODELS . $model . ".php";
             if(class_exists($class)){
                 $this->models[$model] = new $class;
@@ -27,51 +27,6 @@ class Controller{
             }
         }
         return false;
-    }
-
-    public function composeHeader(){
-        // get params from Doc
-        $this->data['page_title'] = Application::$app->doc->getTitle();
-		$this->data['lang'] = Application::$app->doc->getLanguage();
-		$this->data['charset'] = Application::$app->config->get_cs($this->data['lang']);
-        $this->data['description'] = Application::$app->doc->getDescription();
-        $this->data['add_css'] = Application::$app->doc->getStyle();
-        $this->data['add_js'] = Application::$app->doc->getScript();
-        $this->data['add_style'] = Application::$app->doc->getInlineStyles();
-        $this->data['site_icon']  = HOME_URL . 'assets/images/' . SITE_ICON_FILE;
-
-        // get layout
-        return $this->getLayout('header');
-        // return $this->composeView($layout);
-        // show($layout);
-    }
-
-    public function getLayout($name){
-        $file = PATH_LAYOUTS . $name . '.php';
-        if(!file_exists($file)){
-			$t=time();
-			trigger_error(date("H:i:s",$t).": Схема $name не найдена.", Errorhandler::EL_INFO);
-            return '';
-        }
-        ob_start();
-        include_once $file;
-        $content = ob_get_clean();
-        return $content;
-    }
-
-    public function composeView($layout){
-        while($startpos = strpos($layout, '{{')){
-            $endpos = strpos($layout, '}}');
-            if($endpos){
-                $length = $endpos - $startpos;
-                $key = substr($layout, $startpos+2, $length-2);
-                $ins = array_key_exists($key, $this->data) ? $this->data[$key] : '';
-                $layout = substr_replace($layout, $ins, $startpos, $length+2);
-            }
-        }
-        // show($layout);
-        return $layout;
-        // return $content;
     }
 
     public function load_controller($file, $method, $data = []){
@@ -83,7 +38,6 @@ class Controller{
         }
         $block = new $class($data);
         $content = is_callable([$block, $method]) ? call_user_func([$block, $method]) : '';
-        // show((bool)is_callable([$block, $method]));
         return $content; 
     }
 
@@ -110,12 +64,9 @@ class Controller{
                 $length = $endpos - $startpos;
                 $key = substr($layout, $startpos+2, $length-2);
                 $ins = array_key_exists($key, $data) ? $data[$key] : '';
-                // show($key);
-                // show($ins);
-                $layout = substr_replace($layout, ltrim($ins), $startpos, $length+2);
+                $layout = substr_replace($layout, $ins, $startpos, $length+2);
             }
         }
-        // show($layout);
         return $layout;
     }
 }

@@ -25,7 +25,7 @@ class Home extends Controller{
         // 11. replace all {{vars}} with code if exist
 
         return $this->render($this->views);
-        // show($this->views);
+        // dump($this->views);
     }
 
     private function pagesetup(){
@@ -40,9 +40,9 @@ class Home extends Controller{
             'css/fonts.css'
         ];
         $add_style = [
-            'body' => [
-                'background-image' => 'linear-gradient(0deg, var(--t02), var(--t02)), url("' . HOME_URL . 'assets/images/cleanbg03.jpg")'
-            ]
+            // 'body' => [
+            //     'background-image' => 'linear-gradient(0deg, var(--t02), var(--t02)), url("' . HOME_URL . 'assets/images/cleanbg03.jpg")'
+            // ]
         ];
 
         // if($User->isLogged()){
@@ -58,12 +58,8 @@ class Home extends Controller{
         Application::$app->doc->addStyle($add_css);
         Application::$app->doc->addScript($add_js);
 
-        // show('Calling load_controller header, common method');
-
-        // show('Load controller Header, action common');
         $this->views['header'] = $this->load_controller('header', 'common', $this->data);
-        // show('Called.');
-        // $this->views['topmenu'] = $this->load_controller('menu', 'topmenu', $this->data);
+        $this->views['topmenu'] = $this->load_controller('menu', 'topmenu', $this->data);
         // $this->views['mainmenu'] = $this->load_controller('menu', 'mainmenu', $this->data);
         // $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
 

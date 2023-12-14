@@ -45,7 +45,7 @@ $sname = explode('/', rtrim(HOME_URL, '/'));
 
 defined('SITE_SHORT_NAME') or 	define('SITE_SHORT_NAME', end($sname));
 defined('SITE_DISPLAY_NAME') or define('SITE_DISPLAY_NAME', 'Templater');
-defined('MAIN_LOGO_FILE') or 	define('MAIN_LOGO_FILE', 'ticon.png');
+defined('MAIN_LOGO_FILE') or 	define('MAIN_LOGO_FILE', 'ttype.png');
 defined('SITE_ICON_FILE') or 	define('SITE_ICON_FILE', 'ticon.svg');
 
 defined('ENVIRONMENT') or 		define('ENVIRONMENT', 'development');

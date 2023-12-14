@@ -21,7 +21,7 @@ class Router{
     private function getRoutes($source){
         $file = PATH_CONFIG . $source;
         if(file_exists($file)){
-            require_once $file;
+            require $file;
             $routes['get'] = $get;
             $routes['post'] = $post;
             return $routes;
@@ -35,10 +35,6 @@ class Router{
 
     public function getAction($url){
         return $url[1] ?? 'index';
-    }
-
-    public function getCallback(){
-
     }
 
     public function resolve(){
@@ -68,8 +64,8 @@ class Router{
        // $this->controller = $callback[0];
         // $this->action = $callback[1];
 
-        show($url);
-        show($callback);
+        dump($url);
+        dump($callback);
 
     }
 }

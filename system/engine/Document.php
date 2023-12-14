@@ -53,18 +53,6 @@ class Document{
         }
 	}
 
-	public function getScript(): string{
-	    $ins = '';
-	    foreach($this->scripts as $file){
-	        $path = PATH_ASSETS . 'js/' . $file;
-	        if(file_exists($path)){
-	            $src = HOME_URL . 'assets/js/' . $file;
-	            $ins .= "&lt;script&nbsp;type=\"text/javascript\" src=\"$src\"&gt;&lt;/script&gt\n";
-	        }
-	    }
-	    return $ins;
-	}
-
 	public function addStyle($files){
 		if(is_string($files)){
 			$files = array($files);
@@ -74,13 +62,25 @@ class Document{
         }
 	}
 
+	public function getScript(): string{
+	    $ins = '';
+	    foreach($this->scripts as $file){
+	        $path = PATH_ASSETS . 'js/' . $file;
+	        if(file_exists($path)){
+	            $src = HOME_URL . 'assets/js/' . $file;
+	            $ins .= "<script type=\"text/javascript\" src=\"$src\"></script>\n";
+	        }
+	    }
+	    return $ins;
+	}
+
 	public function getStyle(): string{
 	    $ins = '';
 	    foreach($this->css_styles as $file){
 	        $path = PATH_ASSETS . $file;
 	        if(file_exists($path)){
 	            $src = 'assets/' . $file;
-	            $ins .= "&lt;link href=\"$src\" rel=\"stylesheet\"&gt;\n";
+	            $ins .= "<link href=\"$src\" rel=\"stylesheet\"/>\n";
 	        }
 	    }
 	    return $ins;
@@ -93,7 +93,7 @@ class Document{
 	}
 
 	public function getInlineStyles(): string {
-        $ins = '&lt;style type="text/css"&gt;';
+        $ins = '<style type="text/css">';
         foreach($this->inline_styles as $selector => $style){
             $ins .= "$selector{\n";
             if(is_array($style)){
@@ -103,6 +103,6 @@ class Document{
             }
             $ins .= "}\n";
         }
-        return $ins.'&lt;/style&gt;';
+        return $ins.'</style>';
 	}
 }

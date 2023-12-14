@@ -1,7 +1,47 @@
-/*@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&display=swap');*/
+/*font-family: 'Alterna Titul 3D', sans-serif;*/
+/*font-family: 'Rewinder Demi Shadow', sans-serif;*/
+/*font-family: 'Signboard Caps', serif;*/
+    /*font-family: 'Advent Pro', sans-serif;*/
+/*font-family: 'Amatic SC', sans-serif;*/
+/*font-family: 'Appetite New', serif;*/
+/*font-family: 'Ariadna Script', cursive;*/
 /*font-family: 'Arsenal', sans-serif;*/
-/*font-family: 'El Messiri', sans-serif;*/
+/*font-family: 'Astro', sans-serif;*/
+/*font-family: 'Bad Script', cursive;*/
+/*font-family: 'Buyan', sans-serif;*/
+/*font-family: 'Cancellarist', cursive;*/
+/*font-family: 'Caveat', cursive;*/
+    /*font-family: 'Cimero Pro', sans-serif;*/ 
+/*font-family: 'Comfortaa', sans-serif;*/ 
+/*font-family: 'Cormorant_Garamond', serif;*/
+/*font-family: 'Dusha', sans-serif;*/ 
+/*font-family: 'El Messiri', serif;*/
+/*font-family: 'Fairy Muffin', sans-serif;*/ 
+/*font-family: 'Favorit', cursive;*/
+/*font-family: 'Fira Sans', sans-serif;*/ 
+/*font-family: 'Forum', serif;*/
+/*font-family: 'Gentium Plus', serif;*/
+/*font-family: 'Heinrich Script', cursive;*/
+/*font-family: 'Favorit', cursive;*/
+/*font-family: 'Kablammo', cursive;*/
+/*font-family: 'KB Year', sans-serif;*/ 
+/*font-family: 'Kelly Slab', serif;*/ 
 /*font-family: 'Marck Script', cursive;*/
+/*font-family: 'Neucha', sans-serif;*/
+/*font-family: 'Nunito Sans', sans-serif;*/
+/*font-family: 'Oi', cursive;*/
+/*font-family: 'Old Rosa', cursive;*/
+/*font-family: 'Pacifico', cursive;*/
+/*font-family: 'Pangolin', sans-serif;*/
+/*font-family: 'Pero', cursive;*/
+/*font-family: 'Poetica Romance', cursive;*/
+/*font-family: 'Prospect', cursive;*/
+/*font-family: 'PT Serif', serif;*/
+/*font-family: 'Rubik Dirt', cursive;*/
+/*font-family: 'Sofia Sans', sans-serif;*/
+/*font-family: 'Songer', sans-serif;*/
+/*font-family: 'Veronica Script', cursive;*/
+/*font-family: 'Victorian Gothic', cursive;*/
 
 *,:after,:before{box-sizing: border-box;}
 .clearfix:after, .clearfix:before{
@@ -14,31 +54,16 @@
     display: block;
 }
 
-.testcolors{
-    display: flex;
-}
-.palette{
-    padding: 0 16px;
-    display: flex;
-    flex-direction: column;
-    width: 128px;
-}
-.sample{
-    height: 32px;
-    text-align: center;
-    line-height: 32px;
-}
-
 body{
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0;
     padding: 0;
-    font-family: 'Arsenal', sans-serif;
-    font-size: 18px;
-    perspective: 1px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 16px;
+    /* perspective: 1px; */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
 }
 img{
     display: block;
@@ -46,6 +71,21 @@ img{
 .hidden{
     display: none;
 }
+.header{
+    width: 100%;
+    height: 880px;
+    /* height: 100vh; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    /* background-attachment: fixed; */
+    background-image: url('../images/header_bg.png');
+}
+
+
+
+
+
 .navigation{
     position: relative;
     padding: 6px 64px;
@@ -60,7 +100,9 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'El Messiri', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Advent Pro', sans-serif;
     transition: all 0.3s;
 }
 .top{
@@ -75,7 +117,6 @@ img{
     text-transform: uppercase;
     color: var(--c01);
     background-color: var(--t03);
-    background-image: url('../images/nav_top02.png');
     background-repeat: repeat;
     background-size: auto 88px;
 }
@@ -211,10 +252,6 @@ img{
     width: 100%;
     color: var(--c01);
 }
-.menu-holder.floating .menu-item,
-.bottom .menu-holder .menu-item{
-/*    color: var(--c01);*/
-}
 .menu-holder .menu-item span:after{
     bottom: -4px;
 }
@@ -339,22 +376,8 @@ img{
     border-radius: 8px;
     background-color: var(--t06);
 }
-.alert span{
-/*    display: inline-block;*/
-/*    white-space:nowrap;*/
-/*    overflow: auto;*/
-/*    width: 100%;*/
-}
-.alert.success:after, .alert.info:after, .alert.error:after{
-/*    content: "\00d7";
-    font-size: 24px;
-
-    position: absolute;
-    right: 16px;
-*/}
 marquee.alert{
     text-align: initial;
-    hspace: 5;
 }
 .alert.success{
     background-image: linear-gradient(90deg, #00000000 0%, var(--t09) 15%, var(--t09) 85%, #00000000 100%);
@@ -376,7 +399,6 @@ marquee.alert{
     color: var(--c04);
 }
 .main{
-/*    margin-top: 4px;*/
     padding: 24px;
     background-color: var(--t01);
     border: solid 1px var(--c09);
@@ -416,8 +438,8 @@ hr{
 #logotype{
     padding: 0;
     height: 70px;
-    -webkit-mask-image: url('../images/cmglogo.png');
-    mask-image: url('../images/cmglogo.png');
+    -webkit-mask-image: url('../images/ttype.png');
+    mask-image: url('../images/ttype.png');
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-size: 100%;
@@ -557,7 +579,7 @@ hr{
 .close-icon:hover{
     transform: rotate(90deg);
 }
-/*//////////////////*/
+/*__________________*/
 /* LOGIN / REGISTER */
 /*
 .roundlogo.small{
@@ -569,7 +591,7 @@ hr{
     right: 24px;
     transform: translateY(-50%);
 }
-/*//////////*/
+/*__________*/
 /* CONTACTS */
 /*
 .inner-menu{
@@ -609,7 +631,7 @@ hr{
     margin: 6px 0;
 }
 
-/*//////////////*/
+/*______________*/
 /* PROFILE PAGE */
 /*
 .profiledata{
@@ -862,7 +884,7 @@ hr{
   transform: translateX(40px);
 }
 
-/*////////////////*/
+/*________________*/
 /* MAIN WORKPLACE */
 /*
 .main-header{

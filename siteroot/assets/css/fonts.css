@@ -1,279 +1,623 @@
-/* cyrillic-ext */
+/* --- Alterna Titul 3D --- */
+@font-face {
+  font-family: 'Alterna Titul 3D';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/a_AlternaTitul3D/aalternatitul3d.ttf') format('TrueType');
+}
+/* --- Rewinder Demi Shadow --- */
+@font-face {
+  font-family: 'Rewinder Demi Shadow';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/a_RewinderDemiSh/arewinderdemish.ttf') format('TrueType');
+}
+/* --- Signboard Caps --- */
+@font-face {
+  font-family: 'Signboard Caps';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/a_SignboardCpsNr/asignboardcpsnrbold.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Signboard Caps';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/a_SignboardCpsNr/asignboardcpsnrbolditalic.ttf') format('TrueType');
+}
+/* --- Advent Pro --- */
+@font-face {
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-display: swap;
+  src: url('../fonts/Advent_Pro/AdventPro-VariableFont_wdth,wght.ttf') format('opentype');
+}
+@font-face {
+  font-family: 'Advent Pro';
+  font-style: italic;
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-display: swap;
+  src: url('../fonts/Advent_Pro/AdventPro-Italic-VariableFont_wdth,wght.ttf') format('opentype');
+}
+/* --- Amatic SC --- */
+@font-face {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../fonts/Amatic_SC/AmaticSC-Regular.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Amatic_SC/AmaticSC-Bold.ttf') format('TrueType');
+}
+/* --- Appetite New --- */
+@font-face {
+  font-family: 'Appetite New';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Appetite_New/appetitenew.ttf') format('TrueType');
+}
+/* --- Ariadna Script --- */
+@font-face {
+  font-family: 'Ariadna Script';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Ariadna_script/ariadnascript.ttf') format('TrueType');
+}
+/* --- Ariadna Script --- */
+@font-face {
+  font-family: 'Ariadna Script';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Ariadna_script/ariadnascript.ttf') format('TrueType');
+}
+/* --- Arsenal --- */
 @font-face {
   font-family: 'Arsenal';
   font-style: italic;
   font-weight: 400;
   font-display: swap;
   src: url('../fonts/Arsenal/Arsenal-Italic.woff2') format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
-/* cyrillic */
 @font-face {
   font-family: 'Arsenal';
   font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Italic.woff2') format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Italic.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Italic.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Italic.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: italic;
-  font-weight: 700;
+  font-weight: 600;
   font-display: swap;
   src: url('../fonts/Arsenal/Arsenal-BoldItalic.woff2') format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
-/* cyrillic */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-BoldItalic.woff2') format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-BoldItalic.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-BoldItalic.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-BoldItalic.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
 @font-face {
   font-family: 'Arsenal';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url('../fonts/Arsenal/Arsenal-Regular.woff2') format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
-/* cyrillic */
 @font-face {
   font-family: 'Arsenal';
   font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Regular.woff2') format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Regular.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Regular.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Regular.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-display: swap;
   src: url('../fonts/Arsenal/Arsenal-Bold.woff2') format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
-/* cyrillic */
+/* --- Astro --- */
 @font-face {
-  font-family: 'Arsenal';
+  font-family: 'Astro';
   font-style: normal;
-  font-weight: 700;
   font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Bold.woff2') format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  src: url('../fonts/Astro_cyr_lat/astrocyr_lat.otf') format('OpenType');
 }
-/* vietnamese */
+/* --- Bad Script --- */
 @font-face {
-  font-family: 'Arsenal';
+  font-family: 'Bad Script';
   font-style: normal;
-  font-weight: 700;
   font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Bold.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  src: url('../fonts/Bad_Script/BadScript-Regular.ttf') format('TrueType');
 }
-/* latin-ext */
+/* --- Buyan --- */
 @font-face {
-  font-family: 'Arsenal';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Bold.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Arsenal';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/Arsenal/Arsenal-Bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* arabic */
-@font-face {
-  font-family: 'El Messiri';
+  font-family: 'Buyan';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/El_Messiri/ElMessiri-VariableFont_wght.woff2') format('woff2');
-  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+  src: url('../fonts/Buyan/BuyanRegular.ttf') format('TrueType');
 }
-/* cyrillic */
 @font-face {
-  font-family: 'El Messiri';
+  font-family: 'Buyan';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../fonts/Buyan/BuyanThin.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Buyan';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/Buyan/BuyanBold.ttf') format('TrueType');
+}
+/* --- Cancellarist --- */
+@font-face {
+  font-family: 'Cancellarist';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Cansellarist/cansellarist.ttf') format('TrueType');
+}
+/* --- Caveat --- */
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url('../fonts/Caveat/Caveat-VariableFont_wght.ttf') format('TrueType');
+}
+/* --- Cimero Pro --- */
+@font-face {
+  font-family: 'Cimero Pro';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Cimero_Pro/CimeroPro.otf') format('OpenType');
+}
+/* --- Comfortaa --- */
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url('../fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf') format('TrueType');
+}
+/* --- Cormorant Garamond --- */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-BoldItalic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-Italic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-Light.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-LightItalic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-MediumItalic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/El_Messiri/ElMessiri-VariableFont_wght.woff2') format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-Regular.ttf') format('TrueType');
 }
-/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-SemiBold.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-SemiBoldItalic.ttf') format('TrueType');
+}
+/* --- Dusha --- */
+@font-face {
+  font-family: 'Dusha';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Dusha_V5/dushav5.otf') format('OpenType');
+}
+/* --- El Messiri --- */
 @font-face {
   font-family: 'El Messiri';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url('../fonts/El_Messiri/ElMessiri-VariableFont_wght.ttf') format('TrueType');
+}
+/* --- Fairy Muffin Round Pop --- */
+@font-face {
+  font-family: 'Fairy Muffin';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/FairyMuffinRoundPop/Fairymuffinroundpop.ttf') format('TrueType');
+}
+/* --- Favorit --- */
+@font-face {
+  font-family: 'Favorit';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Favorit/favorit.ttf') format('TrueType');
+}
+/* --- Fira Sans --- */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-Black.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-BlackItalic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-Bold.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-BoldItalic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-ExtraBold.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-ExtraBoldItalic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-ExtraLight.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-ExtraLightItalic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/El_Messiri/ElMessiri-VariableFont_wght.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url('../fonts/Fira_Sans/FiraSans-Regular.ttf') format('TrueType');
 }
-/* latin */
 @font-face {
-  font-family: 'El Messiri';
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-Italic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-Light.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-LightItalic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-Medium.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-MediumItalic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-SemiBold.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-SemiBoldItalic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-Thin.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url('../fonts/Fira_Sans/FiraSans-ThinItalic.ttf') format('TrueType');
+}
+/* --- Forum --- */
+@font-face {
+  font-family: 'Forum';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Forum/Forum-Regular.ttf') format('TrueType');
+}
+/* --- Gentium Plus --- */
+@font-face {
+  font-family: 'Gentium Plus';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/El_Messiri/ElMessiri-VariableFont_wght.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url('../fonts/Gentium_Plus/GentiumPlus-Regular.ttf') format('TrueType');
 }
-/* arabic */
 @font-face {
-  font-family: 'El Messiri';
-  font-style: normal;
-  font-weight: 700;
+  font-family: 'Gentium Plus';
+  font-style: italic;
+  font-weight: 400;
   font-display: swap;
-  src: url('../fonts/El_Messiri/ElMessiri-VariableFont_wght.woff2') format('woff2');
-  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+  src: url('../fonts/Gentium_Plus/GentiumPlus-Italic.ttf') format('TrueType');
 }
-/* cyrillic */
 @font-face {
-  font-family: 'El Messiri';
+  font-family: 'Gentium Plus';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-display: swap;
-  src: url('../fonts/El_Messiri/ElMessiri-VariableFont_wght.woff2') format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  src: url('../fonts/Gentium_Plus/GentiumPlus-Bold.ttf') format('TrueType');
 }
-/* latin-ext */
 @font-face {
-  font-family: 'El Messiri';
-  font-style: normal;
-  font-weight: 700;
+  font-family: 'Gentium Plus';
+  font-style: italic;
+  font-weight: 600;
   font-display: swap;
-  src: url('../fonts/El_Messiri/ElMessiri-VariableFont_wght.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url('../fonts/Gentium_Plus/GentiumPlus-BoldItalic.ttf') format('TrueType');
 }
-/* latin */
+/* --- Heinrich Script --- */
 @font-face {
-  font-family: 'El Messiri';
+  font-family: 'Heinrich Script';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-display: swap;
-  src: url('../fonts/El_Messiri/ElMessiri-VariableFont_wght.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url('../fonts/HeinrichScript/heinrichscript.ttf') format('TrueType');
 }
-/* cyrillic */
+/* --- Kablammo --- */
+@font-face {
+  font-family: 'Kablammo';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Kablammo/static/Kablammo-Regular.ttf') format('TrueType');
+}
+/* --- KB Year --- */
+@font-face {
+  font-family: 'KB Year';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/KB_Year/kbyear.ttf') format('TrueType');
+}
+/* --- Kelly Slab --- */
+@font-face {
+  font-family: 'Kelly Slab';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Kelly_Slab/KellySlab-Regular.ttf') format('TrueType');
+}
+/* --- Marck Script --- */
 @font-face {
   font-family: 'Marck Script';
   font-style: normal;
-  font-weight: 400;
   font-display: swap;
-  src: url('../fonts/Marck_Script/MarckScript-Regular.woff2') format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  src: url('../fonts/Marck_Script/MarckScript-Regular.ttf') format('TrueType');
 }
-/* latin-ext */
+/* --- Neucha --- */
 @font-face {
-  font-family: 'Marck Script';
+  font-family: 'Neucha';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Neucha/Neucha-Regular.ttf') format('TrueType');
+}
+/* --- Nunito Sans --- */
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-display: swap;
+  src: url('../fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf') format('opentype');
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: italic;
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-display: swap;
+  src: url('../fonts/Nunito_Sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf') format('opentype');
+}
+/* --- Oi --- */
+@font-face {
+  font-family: 'Oi';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Oi/Oi-Regular.ttf') format('TrueType');
+}
+/* --- Old Rosa --- */
+@font-face {
+  font-family: 'Old Rosa';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Old_Rosa/oldrosa_normal.ttf') format('TrueType');
+}
+/* --- Pacifico --- */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Pacifico/Pacifico-Regular.ttf') format('TrueType');
+}
+/* --- Pangolin --- */
+@font-face {
+  font-family: 'Pangolin';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Pangolin/Pangolin-Regular.ttf') format('TrueType');
+}
+/* --- Pero --- */
+@font-face {
+  font-family: 'Pero';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Pero/pero.ttf') format('TrueType');
+}
+/* --- Poetica Romance --- */
+@font-face {
+  font-family: 'Poetica Romance';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Poetica_Romance/poeticaromance.ttf') format('TrueType');
+}
+/* --- Prospect --- */
+@font-face {
+  font-family: 'Prospect';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Prospect/prospect.ttf') format('TrueType');
+}
+/* --- PT Serif --- */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/PT_Serif/PTSerif-Bold.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/PT_Serif/PTSerif-BoldItalic.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'PT Serif';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/Marck_Script/MarckScript-Regular.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url('../fonts/PT_Serif/PTSerif-Regular.ttf') format('TrueType');
 }
-/* latin */
 @font-face {
-  font-family: 'Marck Script';
-  font-style: normal;
+  font-family: 'PT Serif';
+  font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/Marck_Script/MarckScript-Regular.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url('../fonts/PT_Serif/PTSerif-Italic.ttf') format('TrueType');
+}
+/* --- Rubik Dirt --- */
+@font-face {
+  font-family: 'Rubik Dirt';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Rubik_Dirt/RubikDirt-Regular.ttf') format('TrueType');
+}
+/* --- Sofia Sans --- */
+@font-face {
+  font-family: 'Sofia Sans';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url('../fonts/Sofia_Sans_Extra_Condensed/SofiaSansExtraCondensed-VariableFont_wght.ttf') format('TrueType');
+}
+@font-face {
+  font-family: 'Sofia Sans';
+  font-style: italic;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url('../fonts/Sofia_Sans_Extra_Condensed/SofiaSansExtraCondensed-Italic-VariableFont_wght.ttf') format('TrueType');
+}
+/* --- Songer --- */
+@font-face {
+  font-family: 'Songer';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/SONGER_Condensed/songercondensed_heavy.otf') format('OpenType');
+}
+/* --- Veronica Script --- */
+@font-face {
+  font-family: 'Veronica Script';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Veronica_script_Two/veronicascripttwo.ttf') format('TrueType');
+}
+/* --- Victorian Gothic --- */
+@font-face {
+  font-family: 'Victorian Gothic';
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Victorian_Gothic_One/victoriangothicone.ttf') format('TrueType');
 }

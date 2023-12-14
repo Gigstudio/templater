@@ -1,7 +1,7 @@
 <?php
 defined('_RUNKEY') or die;
 
-function show($var){
+function dump($var){
 	echo '<pre>';
 	var_dump($var);
 	echo '</pre>';

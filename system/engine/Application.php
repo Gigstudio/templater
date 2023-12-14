@@ -18,7 +18,7 @@ class Application{
     public function __construct(){
         self::$app = $this;
         $this->config = new Config();
-        $this->config->init($this->configs);
+        $this->config->init();
         $this->error = new Errorhandler();
 		$this->request = new Request();
 		$this->response = new Response();
@@ -27,14 +27,12 @@ class Application{
     }
 
     public function run(){
-        // show($this);
         $content = $this->router->resolve();
         $this->show($content ?? '');
-        
+
     }
 
 	public function show(string $content){
-        // show($content);
         $this->response->setOutput($content);
         $this->response->show();
 	}

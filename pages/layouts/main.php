@@ -1,21 +1,19 @@
 <?php
-// show('Inside layout');
+// dump('Inside layout');
 // use Cmgift\System\Engine\Application;
 ?>
 
 <!DOCTYPE html>
 {{header}}
-    {{topmenu}}
-    {{mainmenu}}
-        <div class="content">
-            {{ribbon}}
-            <div class="main">
-                {{content}}
-            </div>
+<body>
+{{topmenu}}
+{{mainmenu}}
+    <div class="content">
+        {{ribbon}}
+        <div class="main">
+            {{content}}
         </div>
-        <div class="divider gold"></div>
-        {{bottom}}
     </div>
-
+    {{bottom}}
 </body>
 </html>

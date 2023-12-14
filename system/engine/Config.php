@@ -22,11 +22,14 @@ class Config{
 		return 'UTF-8';
 	}
 
-	public function init($configs){
+	public function init(){
+		// $configs = scandir(PATH_CONFIG);
+		$configs = array_diff(scandir($this->path), array('..', '.'));
+		// dump($configs);
 		if(is_array($configs)){
 			foreach($configs as $config){
-				$file = PATH_CONFIG . $config .'.php';
-				require_once($file);
+				$file = PATH_CONFIG . $config;
+				require($file);
 				if(is_array($settings)){
 					foreach($settings as $key=>$value){
 						$this->set($key, $value);
@@ -34,5 +37,6 @@ class Config{
 				}
 			}
 		}
+		// dump($this);
 	}
 }
