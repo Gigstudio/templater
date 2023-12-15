@@ -1,2 +1,4 @@
 storage/
 .md
+config/appconfig.php
+config/dbconfig.php
