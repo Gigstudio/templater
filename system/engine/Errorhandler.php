@@ -3,6 +3,8 @@ namespace Templater\System\Engine;
 defined('_RUNKEY') or die;
 
 class Errorhandler{
+	public array $codemap;
+
     public const EL_INFO = 0;
     public const EL_WARN = 1;
     public const EL_FATAL = 2;
@@ -11,7 +13,7 @@ class Errorhandler{
     public int $log_lvl = self::EL_WARN;
     private string $log_file;
 	public bool $error_display;
-	public string $error_page_path = PATH_VIEWS . 'errors';
+	public string $error_page = PATH_VIEWS . 'templates/error.php';
 
     public string $er_code;
     public string $er_msg;
@@ -49,15 +51,16 @@ class Errorhandler{
 			}
 
 			// if ($error >= $this->log_lvl) {
-				$this->write($file, $message, $error);
+				$this->write($message, $file, $error);
 			// }
 
 			if ($this->error_display) {
 				$msg = '<b>' . $error . '</b>: ' . $message . ' in <b>' . $file . '</b> on line <b>' . $line . '</b>';
 				// Application::$app->session->setFlash($error, $msg, 'dynamic');
-				echo $msg.'<br>';
+				// echo $msg.'<br>';
+				header('Location: ' . HOME_URL . 'error');
 			} else {
-				// header('Location: ' . $this->error_page);
+				header('Location: ' . HOME_URL . 'error');
 				// die();
 			}
 		});
@@ -65,18 +68,21 @@ class Errorhandler{
 		// Exception Handler
 		set_exception_handler(function(\Throwable $e) {
             $this->setError($e->getCode());
-			// if ($this->error_log) {
-				$this->write($e->getFile(), $e->getMessage(), get_class($e));
+			$this->write($e->getMessage(), $e->getFile(), get_class($e));
+			$er_content = array_key_exists($this->er_code, $this->messages) 
+				? $this->messages[$this->er_code] : [
+					'header' 	=> 'Unknown',
+					'message'	=> 'Возникла непредвиденная ошибка: '.$e->getMessage(),
+					'resolve'	=> '<a href="' . HOME_URL .'">На главную</a>'
+				];
+			// if($e->getMessage()){
+			// 	$er_content['message'] = $e->getMessage();
 			// }
-
-			if ($this->error_display) {
-				$msg = '<b>' . $e->getCode() . '</b>: ' . $e->getMessage() . ' in <b>' . $e->getFile() . '</b> on line <b>' . $e->getLine() . '</b>';
-				// Application::$app->session->setFlash($e->getCode(), $msg, 'dynamic');
-				echo $msg.'<br>';
-			} else {
-				// header('Location: ' . $this->error_page_path);
-				// die();
-			}
+			ob_start();
+			include $this->error_page;
+			$content = ob_get_clean();
+			echo $content;
+			exit;
 		});
     }
 
@@ -97,7 +103,7 @@ class Errorhandler{
     }
 
     private function getMessage($code){
-        return $this->messages[$code] ?? $code;
+        return $this->messages[$code]['message'] ?? $code;
     }
 
     public function display(){
@@ -108,7 +114,7 @@ class Errorhandler{
         
     }
 
-	public function write(string $sender='Application', string $message, string $status = 'info'): void {
+	public function write(string $message, string $sender='Application', string $status = 'info'): void {
 		$log = "[" . date("Y-m-d H:i:s") . "] - " . "Module: ".$sender." :: " . $status . " || " . $message . PHP_EOL;
 		self::file_force_contents($this->log_file, $log);
 	}

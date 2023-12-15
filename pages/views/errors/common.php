@@ -1,3 +1,0 @@
-<?php
-echo 'Critical error';
-?>

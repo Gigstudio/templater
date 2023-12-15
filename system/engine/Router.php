@@ -41,6 +41,7 @@ class Router{
         $method = $this->request->getMethod();
         $url = $this->request->getUrl();
         $callback = $this->routeMap[$method][$url] ?? false;
+        // dump($this->request->getQueryParams());
 
         if(!$callback){
             throw new \Exception('Page not found', 404);

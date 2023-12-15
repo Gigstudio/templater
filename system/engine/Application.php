@@ -10,6 +10,8 @@ class Application{
 	public Response $response;
 	public Router $router;
     public Document $doc;
+    // public User $user;
+    public $user;
     private array $configs = [
         'appconfig',
         'dbconfig'

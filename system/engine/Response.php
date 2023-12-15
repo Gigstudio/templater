@@ -5,6 +5,7 @@ defined('_RUNKEY') or die;
 class Response{
 	private array $headers = [];
 	private string $output = '';
+	private array $params = [];
 
 	public function setOutput(string $content){
 		$this->output = $content;

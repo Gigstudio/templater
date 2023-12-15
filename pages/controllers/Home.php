@@ -12,24 +12,25 @@ class Home extends Controller{
         // dump($this->views);
     }
 
-    public function construction(){
-        $this->setLayout('error');
-        $this->data['errimage'] = '';
-        $this->data['errcode'] = '403';
-        // Use language here! Dont hardcode!
-        $this->data['errmessage'] = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
-        $this->views['errormenu'] = $this->load_controller('menu', 'errormenu', $this->data);
-        return $this->render($this->views);
-        // exit;
-    }
+    // public function construction(){
+    //     $this->setLayout('error');
+    //     $this->data['errimage'] = '';
+    //     $this->data['errcode'] = '403';
+    //     // Use language here! Dont hardcode!
+    //     $this->data['errmessage'] = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+    //     $this->views['errormenu'] = $this->load_controller('menu', 'errormenu', $this->data);
+    //     return $this->render($this->views);
+    //     // exit;
+    // }
 
     public function index($request){
         $pars = $request->getQueryParams();
         if(!array_key_exists('check',$pars)){
-            header("Location: construction");
-            // $this->construction();
-            // exit;
+            $t=time();
+            $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+            throw new \Exception($msg, 410);
         }
+        
         // echo $this->views['header'];
         // 1. compose header
         // 2. create top menu

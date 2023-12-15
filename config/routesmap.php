@@ -8,7 +8,7 @@ use Templater\Controllers\Admin;
 use Templater\Controllers\Service;
 
 $get = [
-    SITE_SHORT_NAME.'/construction' => [Home::class, 'construction'],
+    SITE_SHORT_NAME.'/error'        => [Service::class, 'error'],
     SITE_SHORT_NAME                 => [Home::class, 'index'],
     SITE_SHORT_NAME.'/home'         => [Home::class, 'index'],
     SITE_SHORT_NAME.'/index'        => [Home::class, 'index'],
@@ -25,6 +25,7 @@ $get = [
     SITE_SHORT_NAME.'/bankdetails'  => [Home::class, 'bankdetails'],
     SITE_SHORT_NAME.'/feedback'     => [Home::class, 'feedback'],
     // SITE_SHORT_NAME.'/login'        => [Auth::class, 'login'],
+
 ];
 $post = [
     SITE_SHORT_NAME.'/feedback'     => [Home::class, 'feedback'],

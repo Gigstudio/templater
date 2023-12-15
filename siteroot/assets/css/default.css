@@ -89,7 +89,7 @@ img{
     text-align: center;
 }
 .big-errorheader{
-    margin: 75px auto 8px;
+    margin: 80px auto 0;
     max-width: 680px;
     font-family: 'Cimero Pro', sans-serif;
     font-size: 64px;
@@ -105,6 +105,10 @@ img{
     font-size: 20px;
     font-weight: 600;
     color: var(--c03);
+}
+.errorresolve{
+    font-family: 'Advent Pro', sans-serif;
+    font-style: italic;
 }
 .navigation{
     position: relative;
@@ -186,6 +190,7 @@ img{
 }
 .menu-item:hover, .button:hover{
     color: var(--c01);
+    border-color: var(--c01);
     text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FF952D 0px 0px 20px, #FF952D 0px 0px 30px, #FF952D 0px 0px 40px;
 }
 .menu-item i{
