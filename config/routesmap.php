@@ -5,10 +5,8 @@ use Templater\Controllers\Workspace;
 use Templater\Controllers\Edit;
 use Templater\Controllers\Store;
 use Templater\Controllers\Admin;
-use Templater\Controllers\Service;
 
 $get = [
-    SITE_SHORT_NAME.'/error'        => [Service::class, 'error'],
     SITE_SHORT_NAME                 => [Home::class, 'index'],
     SITE_SHORT_NAME.'/home'         => [Home::class, 'index'],
     SITE_SHORT_NAME.'/index'        => [Home::class, 'index'],

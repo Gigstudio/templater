@@ -24,13 +24,6 @@ class Home extends Controller{
     // }
 
     public function index($request){
-        $pars = $request->getQueryParams();
-        if(!array_key_exists('check',$pars)){
-            $t=time();
-            $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
-            throw new \Exception($msg, 410);
-        }
-        
         // echo $this->views['header'];
         // 1. compose header
         // 2. create top menu
@@ -43,10 +36,11 @@ class Home extends Controller{
         // 9. create bottom menu
         // 10. get layout
         // 11. replace all {{vars}} with code if exist
+        $this->data['page'] = '';
 
         $this->views['topmenu'] = $this->load_controller('menu', 'topmenu', $this->data);
         // $this->views['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
-        // $this->views['mainmenu'] = $this->load_controller('menu', 'mainmenu', $this->data);
+        $this->views['mainmenu'] = $this->load_controller('menu', 'mainmenu', $this->data);
         // $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
 
         return $this->render($this->views);
@@ -61,8 +55,9 @@ class Home extends Controller{
             'fonts/fontawesome/css/solid.css',
             'css/flag-icons.css',
             'css/colors.css',
+            'css/fonts.css',
             'css/default.css',
-            'css/fonts.css'
+            'css/media.css'
         ];
         $add_style = [
             // 'body' => [

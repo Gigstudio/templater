@@ -1,0 +1,131 @@
+/*////////// MEDIA QUERIES //////////*/
+
+@media screen and (max-width: 1050px){
+    .navigation{
+        padding: 0 24px;
+    }
+}
+/*
+@media screen and (max-width: 1050px){
+    .profiledata{
+        flex-direction: column;
+    }
+    .card{
+        width: 100%;
+        margin: 0;
+    }
+    .card.info{
+        margin-bottom: 16px;
+    }
+    .avatarholder{
+        width: 250px;
+    }
+    .card.info{
+        width: 100%;
+        display: flex;
+        min-height: 250px;
+        height: 250px;
+    }
+    .detail{
+        width: 100%;
+        padding: 0 8px;
+    }
+    .cardrow{
+        text-align: left;
+        margin-top: 16px;
+        padding: 0 16px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .content{
+        min-height: calc(100% - 299px);
+    }
+    .bottom .part:not(.wide){
+        width: 100%;
+        justify-content: center;
+    }
+    .bottom .part.left .menu-holder,
+    .bottom .part.right .menu-holder{
+        align-items: center;
+    }
+    .content-holder{
+        padding-top: 130px;
+    }
+    .content{
+        padding: 16px 24px;
+    }
+    .navigation{
+        padding: 0 24px;
+    }
+    .main-menu{
+        padding-top: 4px;
+    }
+    .card.info{
+        width: 250px;
+        margin: 0 auto 16px auto;
+        display: flex;
+        flex-direction: column;
+        min-height: 250px;
+        height: initial;
+    }
+    .cardrow{
+        margin-top: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 720px){
+    .main-menu .part.left{
+    }
+    #hamburger{display: inline-flex;}
+    #hamburger ~ .menu-holder{
+        align-items: flex-start;
+        height: 200px; 
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        padding: 8px 24px;
+        background-color: var(--t03);
+        -webkit-box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
+        -moz-box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
+        box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
+        z-index: 5;
+    }
+    .roundlogo{
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media screen and (max-width: 670px){
+    .navigation{
+        padding: 0 4px;
+    }
+    .main-menu{
+        padding-top: 4px;
+    }
+    .mid{
+        display: none;
+    }
+    .menu-item{
+        padding: 0 4px;
+    }
+    .part.left, .part.right{
+        padding: 0;
+    }
+    .content{
+        padding: 16px 8px;
+    }
+    .dataheader .titlespan{
+        text-transform: capitalize;
+        font-size: 16px;
+    }
+    .dataheader label span{
+        display: none;
+    }
+}
+*/

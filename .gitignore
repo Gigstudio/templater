@@ -1,4 +1,6 @@
 storage/
 .md
+.htaccess
 config/appconfig.php
 config/dbconfig.php
+system/defines.php

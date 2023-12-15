@@ -7,6 +7,7 @@ use Templater\System\Engine\Controller;
 class Menu extends Controller{
 	public function topmenu(){
         $this->data['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
+        $this->data['mainmenu'] = $this->load_controller('menu', 'mainmenu', $this->data);
 
         $content = file_exists(PATH_VIEWS . "topmenu.php") ? $this->render($this->data, 'topmenu') : "";
         return $content;

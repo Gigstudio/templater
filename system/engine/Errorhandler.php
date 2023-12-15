@@ -75,9 +75,6 @@ class Errorhandler{
 					'message'	=> 'Возникла непредвиденная ошибка: '.$e->getMessage(),
 					'resolve'	=> '<a href="' . HOME_URL .'">На главную</a>'
 				];
-			// if($e->getMessage()){
-			// 	$er_content['message'] = $e->getMessage();
-			// }
 			ob_start();
 			include $this->error_page;
 			$content = ob_get_clean();
@@ -104,14 +101,6 @@ class Errorhandler{
 
     private function getMessage($code){
         return $this->messages[$code]['message'] ?? $code;
-    }
-
-    public function display(){
-
-    }
-
-    public function log(){
-        
     }
 
 	public function write(string $message, string $sender='Application', string $status = 'info'): void {

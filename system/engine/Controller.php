@@ -2,6 +2,8 @@
 namespace Templater\System\Engine;
 defined('_RUNKEY') or die;
 
+use Templater\System\Engine\Application;
+
 class Controller{
     public string $layout = 'main';
     public array $models = [];
@@ -10,6 +12,14 @@ class Controller{
 
     public function __construct($extra = []){
         $this->data = $extra;
+        // check for user logged in and user is owner
+        $pars = Application::$app->request->getQueryParams();
+        if(!array_key_exists('check',$pars)){
+            $t=time();
+            $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+            throw new \Exception($msg, 410);
+        }
+        
     }
 
     public function setLayout(string $layout){
