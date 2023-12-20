@@ -1,4 +1,32 @@
+// TODO
+// 1. "Поймать" ширину экрана и подставить нужный файл логотипа!
 (function(){
+    window.addEventListener("resize", function(e){
+    // e = e || window.event;
+    let logo = document.getElementById('logotype').getElementsByTagName('IMG')[0];
+    let srcfile = logo.src.split('/');
+    let elNum = srcfile.length-1;
+    let newName = '';
+    // console.log(window.innerWidth);
+    if(window.innerWidth <= 1120 && srcfile[elNum] == 'ttype.png'){
+        console.log(srcfile[elNum]);
+        srcfile[elNum] = 'ticonred.png';
+        newName = srcfile.join('/');
+        logo.src = newName;
+    }
+    else if(window.innerWidth > 1120 && srcfile[elNum] == 'ticonred.png'){
+        console.log(srcfile[elNum]);
+        srcfile[elNum] = 'ttype.png';
+        newName = srcfile.join('/');
+        logo.src = newName;
+    }
+    // for(o in menus){
+        // menus[o].rect = (menus[o].control && menus[o].states[menus[o].state].type == 'floating') ? menus[o].defineFloatingRect() : menus[o].defineStaticRect();
+        // menus[o].applyStyle(menus[o].rect);
+        // menus[o].initTriggers(e);
+    // }
+});
+
 // 	function serializeObject(form){
 // 	    if(!form || form.nodeName !== "FORM") return;
 // 	    let o = {};

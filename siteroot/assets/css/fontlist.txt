@@ -13,7 +13,7 @@ font-family: 'Cancellarist', cursive;
 font-family: 'Caveat', cursive;
     font-family: 'Cimero Pro', sans-serif;
     font-family: 'Comfortaa', sans-serif;
-font-family: 'Cormorant_Garamond', serif;
+font-family: 'Cormorant Garamond', serif;
 font-family: 'Dusha', sans-serif;
 font-family: 'El Messiri', serif;
 font-family: 'Fairy Muffin', sans-serif;

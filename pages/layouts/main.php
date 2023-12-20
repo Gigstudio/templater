@@ -6,8 +6,10 @@
 <!DOCTYPE html>
 {{header}}
 <body>
-{{topmenu}}
-{{mainmenu}}
+    <div class="block header">
+    {{topmenu}}
+    {{search}}
+    </div>
     <div class="content">
         {{ribbon}}
         <div class="main">
@@ -16,4 +18,5 @@
     </div>
     {{bottom}}
 </body>
+<script type="text/javascript" src="assets/js/main.js"></script>
 </html>

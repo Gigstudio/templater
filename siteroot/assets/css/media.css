@@ -1,11 +1,73 @@
 /*////////// MEDIA QUERIES //////////*/
 
-@media screen and (max-width: 1050px){
+@media screen and (max-width: 1120px){
     .navigation{
         padding: 0 24px;
     }
+    .top{
+        height: 56px;
+    }
+    .hide_1050{
+        display: none;
+    }
+    #logotype{
+        -webkit-mask-image: url('../images/ticoncolor.png');
+        mask-image: url('../images/ticoncolor.png');
+        height: 44px;
 }
-/*
+    #logotype img{
+        height: 44px;
+    }
+    .w400 .plate-icon.big{
+        background-size: 64px 64px;
+        width: 64px;
+        height: 64px;
+    }
+    .plate-info{
+        font-size: 16px;
+    }
+    .info-plate{
+        width: 100%;
+        min-height: 250px;
+    }
+}
+@media screen and (max-width: 800px){
+    #logotype img{
+        /* visibility: hidden; */
+        display: none;
+    }
+    #hamburger{
+        display: inline-flex;
+    }
+    #hamburger ~ .menu-holder{
+        position: fixed;
+        top: 56px;
+        left: 0;
+        align-items: flex-start;
+        height: 100px; 
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        padding: 8px 24px;
+        overflow: auto;
+        background-color: var(--t01);
+        -webkit-box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
+        -moz-box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
+        box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
+        z-index: 3;
+    }
+    .main-menu{
+        padding-left: 0;
+    }
+    .landing-row:not(.inline){
+        flex-direction: column;
+    }
+    .button.green{align-self: center;}
+}
+    /*
 @media screen and (max-width: 1050px){
     .profiledata{
         flex-direction: column;
@@ -77,23 +139,6 @@
 
 @media screen and (max-width: 720px){
     .main-menu .part.left{
-    }
-    #hamburger{display: inline-flex;}
-    #hamburger ~ .menu-holder{
-        align-items: flex-start;
-        height: 200px; 
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        flex-direction: column;
-        padding: 8px 24px;
-        background-color: var(--t03);
-        -webkit-box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
-        -moz-box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
-        box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
-        z-index: 5;
     }
     .roundlogo{
         width: 64px;

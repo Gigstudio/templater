@@ -39,8 +39,9 @@ class Home extends Controller{
         $this->data['page'] = '';
 
         $this->views['topmenu'] = $this->load_controller('menu', 'topmenu', $this->data);
+        $this->views['search'] = $this->load_controller('menu', 'search', $this->data);
         // $this->views['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
-        $this->views['mainmenu'] = $this->load_controller('menu', 'mainmenu', $this->data);
+        $this->views['content'] = $this->load_view('home');
         // $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
 
         return $this->render($this->views);

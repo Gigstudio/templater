@@ -1,4 +1,5 @@
-storage/
+storage/logs
+storage/userdata
 .md
 .htaccess
 config/appconfig.php

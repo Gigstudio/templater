@@ -9,7 +9,7 @@ $active[2] = in_array($page, ['about', 'cooperation', 'bankdetails', 'feedback']
 // dump($this->data);
 ?>
 <nav id="mainmenu" class="part main-menu">
-    <div class="row"></div>
+    <div class="row hide_1050"></div>
     <div class="row">
         <a class="menu-item" onclick="showMenu('main_links')" id="hamburger" title=""><span>&nbsp;</span><i class="fa-solid fa-bars"></i></a>
         <div class="menu-holder" id="main_links">
