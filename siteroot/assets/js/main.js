@@ -1,31 +1,40 @@
 // TODO
 // 1. "Поймать" ширину экрана и подставить нужный файл логотипа!
 (function(){
-    window.addEventListener("resize", function(e){
-    // e = e || window.event;
     let logo = document.getElementById('logotype').getElementsByTagName('IMG')[0];
-    let srcfile = logo.src.split('/');
-    let elNum = srcfile.length-1;
-    let newName = '';
-    // console.log(window.innerWidth);
-    if(window.innerWidth <= 1120 && srcfile[elNum] == 'ttype.png'){
-        console.log(srcfile[elNum]);
-        srcfile[elNum] = 'ticonred.png';
+    newfile = changeLogo(window.innerWidth <= 1120 ? 'ticonred.png' : 'ttype.png');
+    if(newfile) logo.src = newfile;
+    let topnav = document.getElementById('topmenu');
+    window.addEventListener("resize", function(){
+        newfile = changeLogo(window.innerWidth <= 1120 ? 'ticonred.png' : 'ttype.png');
+        if(!newfile) return;
+        logo.src = newfile;
+        // for(o in menus){
+            // menus[o].rect = (menus[o].control && menus[o].states[menus[o].state].type == 'floating') ? menus[o].defineFloatingRect() : menus[o].defineStaticRect();
+            // menus[o].applyStyle(menus[o].rect);
+            // menus[o].initTriggers(e);
+        // }
+    });
+
+    document.addEventListener('scroll', ()=>{
+        topnav.classList.toggle('scrolled', window.scrollY > 0);
+        if(window.innerWidth > 1120){
+            newfile = changeLogo(window.scrollY > 0 ? 'ticonred.png' : 'ttype.png');
+            if(!newfile) return;
+            logo.src = newfile;
+        }
+    });
+
+    function changeLogo(file){
+        let logo = document.getElementById('logotype').getElementsByTagName('IMG')[0],
+            srcfile = logo.src.split('/'),
+            elNum = srcfile.length-1,
+            newName = '';
+        if(srcfile[elNum] == file) return;
+        srcfile[elNum] = file;
         newName = srcfile.join('/');
-        logo.src = newName;
+        return newName;
     }
-    else if(window.innerWidth > 1120 && srcfile[elNum] == 'ticonred.png'){
-        console.log(srcfile[elNum]);
-        srcfile[elNum] = 'ttype.png';
-        newName = srcfile.join('/');
-        logo.src = newName;
-    }
-    // for(o in menus){
-        // menus[o].rect = (menus[o].control && menus[o].states[menus[o].state].type == 'floating') ? menus[o].defineFloatingRect() : menus[o].defineStaticRect();
-        // menus[o].applyStyle(menus[o].rect);
-        // menus[o].initTriggers(e);
-    // }
-});
 
 // 	function serializeObject(form){
 // 	    if(!form || form.nodeName !== "FORM") return;

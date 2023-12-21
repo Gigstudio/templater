@@ -2,10 +2,13 @@
 
 @media screen and (max-width: 1120px){
     .navigation{
-        padding: 0 24px;
+        padding: 6px 24px;
+    }
+    .landing-row{
+        padding: 24px;
     }
     .top{
-        height: 56px;
+        height: initial;
     }
     .hide_1050{
         display: none;
@@ -14,7 +17,7 @@
         -webkit-mask-image: url('../images/ticoncolor.png');
         mask-image: url('../images/ticoncolor.png');
         height: 44px;
-}
+    }
     #logotype img{
         height: 44px;
     }

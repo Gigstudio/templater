@@ -177,6 +177,20 @@ img{
     box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
     z-index: 5;
 }
+.scrolled{
+    height: initial;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background-color: var(--c01);
+}
+.scrolled #logotype{
+    -webkit-mask-image: url('../images/ticoncolor.png');
+    mask-image: url('../images/ticoncolor.png');
+    height: 44px;
+}
+.scrolled #logotype img{
+    height: 44px;
+}
 .part{
     height: 100%;
     display: -webkit-box;
@@ -191,7 +205,6 @@ img{
 }
 .right{
     float: right;
-    align-self: flex-end;
 }
 .row{
     height: 48%;
@@ -204,9 +217,9 @@ img{
     overflow: hidden;
 }
 
-#logotype{
+#logotype,
+#biglogo{
     padding: 0;
-    height: 70px;
     -webkit-mask-image: url('../images/ttype.png');
     mask-image: url('../images/ttype.png');
     -webkit-mask-repeat: no-repeat;
@@ -214,13 +227,26 @@ img{
     -webkit-mask-size: 100%;
     mask-size: 100%;
 }
-#logotype img{
+#logotype{
+    height: 70px;
+}
+#biglogo{
+    height: 110px;
+}
+#logotype img,
+#biglogo img{
     display: inline-block;
     position: relative;
-    height: 70px;
     transition: all 0.3s;
 }
-#logotype:before{
+#logotype img{
+    height: 70px;
+}
+#biglogo img{
+    height: 110px;
+}
+#logotype:before,
+#biglogo:before{
     content: '';
     position: absolute;
     top: 0;
@@ -231,8 +257,9 @@ img{
     transform: translateX(-80px) skewX(-45deg);
     z-index: 5;
 }
-#logotype:hover:before{
-    animation: move-light 1.2s;
+#logotype:hover:before,
+#biglogo:hover:before{
+    animation: move-light .8s;
 }
 
 .button, .menu-item{
@@ -249,7 +276,7 @@ img{
 }
 .button{
     gap: 10px;
-    height: 100%;
+    /* height: 100%; */
     padding: 0 16px;
     font-size: 14px;
     line-height: 32px;
@@ -347,7 +374,7 @@ img{
 }
 .landing-row{
     position: relative;
-    padding: 24px 32px;
+    padding: 24px 128px;
     gap: 32px;
     display: -webkit-box;
     display: -moz-box;
@@ -360,6 +387,11 @@ img{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
+}
+.landing-row.inline{
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .landing-row .inline{
     padding: 0;
@@ -381,8 +413,12 @@ img{
     align-items: center;
     gap: 10px;
     flex: 1 0 0;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 .plate{
+    min-width: 165px;
     border-radius: 20px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -432,6 +468,15 @@ img{
     font-size: 40px;
     line-height: 100%;
 }
+.dark .info-header{
+    color: var(--c01);
+}
+.center .info-header{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--c28);
+}
 .white{
     background-color: var(--t02);
 }
@@ -469,15 +514,50 @@ img{
 }
 .center{
     text-align: center;
+    align-items: center;
+    gap: 48px;
+}
+.miniature{
+    height: 150px;
+}
+.slider{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.slideshow{
+    display: inline-block;
+    padding: 16px 0;
+    animation: slide 40s linear infinite;
+}
+.slideshow img{
+    display: inline-block;
+    margin: 0 30px;
+    box-shadow: 4px 4px 16px 0px var(--t05);
+    transition: all .2s;
+}
+.slideshow img:hover{
+    transform: scale(1.2);
+}
+.slider:hover .slideshow{
+    animation-play-state: paused;
 }
 
-
-
-
-/* 
 .bottom{
+    color: var(--c24);
     flex-wrap: wrap;
-    background-color: var(--t03);
+    text-transform: initial;
+    background-color: var(--c12);
+    align-items: flex-start;
+}
+.bottom .menu-item{
+    color: inherit;
+    font-size: 14px;
+}
+.bottom .h3{
+    color: var(--c20);
+    padding: 12px 8px;
 }
 .bottom .part:not(.wide){
     width: 33%;
@@ -508,6 +588,21 @@ img{
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+
+@keyframes slide{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+/* 
 
 .right-to-left{
     padding-top: 24px;
@@ -746,12 +841,12 @@ hr{
 
 @-webkit-keyframes move-light {
     from {transform: translateX(-80px) skewX(-45deg);}
-    to {transform: translateX(290px) skewX(-45deg);}
+    to {transform: translateX(360px) skewX(-45deg);}
 }
 
 @keyframes move-light{
     from {transform: translateX(-80px) skewX(-45deg);}
-    to {transform: translateX(290px) skewX(-45deg);}
+    to {transform: translateX(360px) skewX(-45deg);}
 }
 
 @-webkit-keyframes fadein {

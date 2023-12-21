@@ -18,5 +18,5 @@
     </div>
     {{bottom}}
 </body>
-<script type="text/javascript" src="assets/js/main.js"></script>
+<!-- <script type="text/javascript" src="assets/js/main.js"></script> -->
 </html>

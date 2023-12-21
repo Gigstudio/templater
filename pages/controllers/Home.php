@@ -37,15 +37,17 @@ class Home extends Controller{
         // 10. get layout
         // 11. replace all {{vars}} with code if exist
         $this->data['page'] = '';
-
+        $abspath = PATH_ASSETS.'images/miniatures/';
+        $relpath = 'assets/images/miniatures/';
+        $this->data['slides'] = $this->get_files($abspath, $relpath, ['jpg', 'jpeg']);
+        
         $this->views['topmenu'] = $this->load_controller('menu', 'topmenu', $this->data);
         $this->views['search'] = $this->load_controller('menu', 'search', $this->data);
         // $this->views['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
         $this->views['content'] = $this->load_view('home');
-        // $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
+        $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
 
         return $this->render($this->views);
-        // dump($this->views);
     }
 
     private function pagesetup(){

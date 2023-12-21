@@ -3,7 +3,7 @@ use Templater\System\Engine\Application;
 
 $string = substr(Application::$app->request->getUrl(),strlen(SITE_SHORT_NAME)+2);
 $page = $this->data['page'];//preg_replace('/index(.php|.html|)/i', '', $string);
-$active[0] = in_array($page, ['plans', 'payments', 'terms', 'policy']);
+$active[0] = in_array($page, ['plans', 'payment', 'terms', 'policy']);
 $active[1] = in_array($page, ['startuse', 'capabilities', 'templates', 'lists']);
 $active[2] = in_array($page, ['about', 'cooperation', 'bankdetails', 'feedback']);
 // dump($this->data);
