@@ -1,11 +1,17 @@
 // TODO
 // 1. "Поймать" ширину экрана и подставить нужный файл логотипа!
 (function(){
-    let logo = document.getElementById('logotype').getElementsByTagName('IMG')[0];
+    let logo = document.getElementById('logotype').getElementsByTagName('IMG')[0],
+        topnav = document.getElementById('topmenu'),
+        hamb = document.getElementById('hamburger'),
+        mainmenu = document.getElementById('main_links');
     newfile = changeLogo(window.innerWidth <= 1120 ? 'ticonred.png' : 'ttype.png');
     if(newfile) logo.src = newfile;
-    let topnav = document.getElementById('topmenu');
+    setMenuVisibility(mainmenu, window.innerWidth > 800);
+
     window.addEventListener("resize", function(){
+        setMenuVisibility(mainmenu, window.innerWidth > 800);
+        if(window.scrollY > 0) return;
         newfile = changeLogo(window.innerWidth <= 1120 ? 'ticonred.png' : 'ttype.png');
         if(!newfile) return;
         logo.src = newfile;
@@ -18,12 +24,27 @@
 
     document.addEventListener('scroll', ()=>{
         topnav.classList.toggle('scrolled', window.scrollY > 0);
+        if(window.innerWidth <=800) setMenuVisibility(mainmenu, false);
         if(window.innerWidth > 1120){
             newfile = changeLogo(window.scrollY > 0 ? 'ticonred.png' : 'ttype.png');
             if(!newfile) return;
             logo.src = newfile;
         }
     });
+
+    document.addEventListener('click', (e)=>{
+        let visible = window.getComputedStyle(mainmenu).getPropertyValue('display');
+        if(isNested(e.target, hamb)){
+            setMenuVisibility(mainmenu, visible == 'none');
+        }
+        else{
+            setMenuVisibility(mainmenu, window.innerWidth > 800);
+        }
+    });
+
+    function setMenuVisibility(target, flag){
+        target.style.display = flag ? 'flex' : 'none';
+    }
 
     function changeLogo(file){
         let logo = document.getElementById('logotype').getElementsByTagName('IMG')[0],
@@ -35,6 +56,22 @@
         newName = srcfile.join('/');
         return newName;
     }
+
+    // function showMenu(){
+	// 	let x = document.getElementById("main_links");
+	// 	x.classList.toggle("hidden", !x.classList.contains("hidden"));
+    // }
+
+	function isNested(child, parent){
+		let targets = parent.constructor === Array ? parent : new Array(parent);
+		if(targets.indexOf(child) >= 0) return true;
+		let node = child.parentNode;
+		while(node != null){
+			if(targets.indexOf(node) >= 0) return true;
+			node = node.parentNode;
+		}
+		return false;
+	}
 
 // 	function serializeObject(form){
 // 	    if(!form || form.nodeName !== "FORM") return;
@@ -56,17 +93,6 @@
 
 // 	function sendfb(){
 // 		console.log("SENDING...");
-// 	}
-
-// 	function isNested(child, parent){
-// 		let targets = parent.constructor === Array ? parent : new Array(parent);
-// 		if(targets.indexOf(child) >= 0) return true;
-// 		let node = child.parentNode;
-// 		while(node != null){
-// 			if(targets.indexOf(node) >= 0) return true;
-// 			node = node.parentNode;
-// 		}
-// 		return false;
 // 	}
 
 // //set cookie

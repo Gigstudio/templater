@@ -334,7 +334,6 @@ img{
     padding: 0 8px;
     color: var(--c28);
 }
-/* .row .menu-item:first-child{padding-left: 0;} */
 .row .menu-item:last-child{padding-right: 0;}
 .menu-item span:after{
     content: "";
@@ -435,6 +434,7 @@ img{
 .info-plate{
     border-radius: 20px;
     width: 50%;
+    min-height: 400px;
     align-self: stretch;
     background-size: cover;
     background-repeat: no-repeat;
@@ -579,7 +579,7 @@ img{
 .bottom .part.wide{
     bottom: 0;
     padding-top: 4px;
-    border-top: solid 1px var(--c03);
+    border-top: solid 1px var(--c20);
     width: 100%;
 }
 

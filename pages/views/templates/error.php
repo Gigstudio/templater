@@ -16,7 +16,7 @@ use Templater\System\Engine\Application;
 </head>
 <body>
 <div class="block header">
-	<nav id="topmenu" class="navigation top">
+	<nav id="topmenu" class="navigation top" style="padding: 6px 24px;">
 		<div class="part left">
 		<?php if(file_exists(PATH_ASSETS . 'images/' . MAIN_LOGO_FILE)): 
 			echo '

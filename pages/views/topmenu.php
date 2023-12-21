@@ -19,7 +19,7 @@
 						<i class="fa-solid fa-right-to-bracket"></i>
 					</a>
 					<?php }else{ ?>
-					<a onclick="ShowMenu('user_menu')" class="menu-item" id="user" title="<?=$this->data['user']['email']?>">
+					<a class="menu-item" id="user" title="<?=$this->data['user']['email']?>">
 						<span>&nbsp;</span>
 						<div class="avatar"></div>
 					</a>

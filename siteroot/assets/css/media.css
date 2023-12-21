@@ -36,7 +36,6 @@
 }
 @media screen and (max-width: 800px){
     #logotype img{
-        /* visibility: hidden; */
         display: none;
     }
     #hamburger{
@@ -47,20 +46,23 @@
         top: 56px;
         left: 0;
         align-items: flex-start;
-        height: 100px; 
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
+        height: 122px; 
+        display: none;
         flex-direction: column;
-        padding: 8px 24px;
+        padding: 12px 24px;
         overflow: auto;
         background-color: var(--t01);
         -webkit-box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
         -moz-box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
         box-shadow: 5px 3px 12px 6px rgba(0,0,0,0.4);
         z-index: 3;
+    }
+    #hamburger ~ .menu-holder .menu-item{
+        text-transform: initial;
+        line-height: 32px;
+    }
+    #hamburger ~ .menu-holder .menu-item:not(:last-child){
+        border-bottom: solid 1px var(--c28);
     }
     .main-menu{
         padding-left: 0;

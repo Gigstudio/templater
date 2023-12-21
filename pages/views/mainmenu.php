@@ -11,7 +11,7 @@ $active[2] = in_array($page, ['about', 'cooperation', 'bankdetails', 'feedback']
 <nav id="mainmenu" class="part main-menu">
     <div class="row hide_1050"></div>
     <div class="row">
-        <a class="menu-item" onclick="showMenu('main_links')" id="hamburger" title=""><span>&nbsp;</span><i class="fa-solid fa-bars"></i></a>
+        <a class="menu-item" id="hamburger" title=""><span>&nbsp;</span><i class="fa-solid fa-bars"></i></a>
         <div class="menu-holder" id="main_links">
             <a class="menu-item<?=$active[0] ? ' selected' : '' ?>" href="<?=HOME_URL.'plans'?>" id="plans"><span>Пользователям</span></a>
             <a class="menu-item<?=$active[1] ? ' selected' : '' ?>" href="<?=HOME_URL.'startuse'?>" id="startuse"><span>Возможности</span></a>
