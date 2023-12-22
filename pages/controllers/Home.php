@@ -9,33 +9,9 @@ class Home extends Controller{
     public function __construct(){
         // $pars = Application::$app->request->getQueryParams();
         $this->pagesetup();
-        // dump($this->views);
     }
 
-    // public function construction(){
-    //     $this->setLayout('error');
-    //     $this->data['errimage'] = '';
-    //     $this->data['errcode'] = '403';
-    //     // Use language here! Dont hardcode!
-    //     $this->data['errmessage'] = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
-    //     $this->views['errormenu'] = $this->load_controller('menu', 'errormenu', $this->data);
-    //     return $this->render($this->views);
-    //     // exit;
-    // }
-
     public function index($request){
-        // echo $this->views['header'];
-        // 1. compose header
-        // 2. create top menu
-        // 3. create user menu
-        // 4. create main menu
-        // 5. create ribbon content
-        // 6. create side menu
-        // 7. create carousel content
-        // 8. create MAIN content
-        // 9. create bottom menu
-        // 10. get layout
-        // 11. replace all {{vars}} with code if exist
         $this->data['page'] = '';
         $abspath = PATH_ASSETS.'images/miniatures/';
         $relpath = 'assets/images/miniatures/';
@@ -62,22 +38,14 @@ class Home extends Controller{
             'css/default.css',
             'css/media.css'
         ];
-        $add_style = [
-            // 'body' => [
-            //     'background-image' => 'linear-gradient(0deg, var(--t02), var(--t02)), url("' . HOME_URL . 'assets/images/cleanbg03.jpg")'
-            // ]
-        ];
 
         // if($User->isLogged()){
             // $this->data['user'] = $User->getCurrent()[0];
         // }
 
-
-        // echo 'Home controller<br>';
         Application::$app->doc->setTitle(Application::$app->config->get('sitetitle'));
         Application::$app->doc->setLanguage(Application::$app->config->get('default_language'));
         Application::$app->doc->setDescription(Application::$app->config->get('sitedescription'));
-        Application::$app->doc->addInlineStyle($add_style);
         Application::$app->doc->addStyle($add_css);
         Application::$app->doc->addScript($add_js);
 

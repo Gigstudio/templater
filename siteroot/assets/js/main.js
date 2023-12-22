@@ -23,6 +23,10 @@
     });
 
     document.addEventListener('scroll', ()=>{
+        let limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+            document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+        console.log(window.scrollY);
+        console.log(limit - window.innerHeight);
         topnav.classList.toggle('scrolled', window.scrollY > 0);
         if(window.innerWidth <=800) setMenuVisibility(mainmenu, false);
         if(window.innerWidth > 1120){

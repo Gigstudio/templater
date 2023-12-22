@@ -94,6 +94,9 @@ class Document{
 
 	public function getInlineStyles(): string {
         $ins = '<style type="text/css">';
+		if(!is_array($this->inline_styles) || count($this->inline_styles) < 1){
+			return '';
+		}
         foreach($this->inline_styles as $selector => $style){
             $ins .= "$selector{\n";
             if(is_array($style)){

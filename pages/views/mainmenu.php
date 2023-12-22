@@ -18,9 +18,4 @@ $active[2] = in_array($page, ['about', 'cooperation', 'bankdetails', 'feedback']
             <a class="menu-item<?=$active[2] ? ' selected' : '' ?>" href="<?=HOME_URL.'about'?>" id="about"><span>О сервисе</span></a>
         </div>
     </div>
-    <!-- <div class="part right">
-        <form class="menu-holder" method="get">
-            <input class="search-box pull-right" name="find" type="text" placeholder="Поиск">
-        </form>
-    </div> -->
 </nav>
