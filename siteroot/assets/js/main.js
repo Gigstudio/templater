@@ -37,7 +37,7 @@
 
     document.addEventListener('click', (e)=>{
         let visible = window.getComputedStyle(mainmenu).getPropertyValue('display');
-        if(isNested(e.target, scrollbutton)){
+        if(scrollbutton && isNested(e.target, scrollbutton)){
             window.scrollTo({
                 top: window.innerHeight,
                 left: 0,

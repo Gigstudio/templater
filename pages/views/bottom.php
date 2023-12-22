@@ -1,7 +1,7 @@
 <?php 
 use Templater\System\Engine\Application;
 $string = substr(Application::$app->request->getUrl(),strlen(SITE_SHORT_NAME)+2);
-$active = preg_replace('/index(.php|.html|)/i', '', $string);
+$active = $this->data['page'];//preg_replace('/index(.php|.html|)/i', '', $string);
 ?>
     <div class="navigation bottom">
         <div class="part left">

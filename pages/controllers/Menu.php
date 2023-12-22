@@ -28,6 +28,11 @@ class Menu extends Controller{
         return $content;
 	}
 
+	public function sidemenu(){
+        $content = file_exists(PATH_VIEWS . "sidemenu.php") ? $this->render($this->data, 'sidemenu') : "";
+        return $content;
+	}
+
     public function mainlogin(){
         $content = file_exists(PATH_VIEWS . "mainlogin.php") ? $this->render($this->data, 'mainlogin') : "";
         return $content;

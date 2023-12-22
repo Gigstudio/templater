@@ -70,6 +70,7 @@
     .landing-row:not(.inline){
         flex-direction: column;
     }
+    .land-info{width: 100%;}
     .button.green{align-self: center;}
 }
     /*

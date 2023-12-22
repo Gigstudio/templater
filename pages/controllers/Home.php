@@ -26,6 +26,24 @@ class Home extends Controller{
         return $this->render($this->views);
     }
 
+    public function plans($request){
+        $this->data['page'] = 'plans';
+        $this->data['sidemenuitems'] = [
+            ['name'=>'plans', 'title'=>'Тарифы'], 
+            ['name'=>'payments', 'title'=>'Способы оплаты'], 
+            ['name'=>'terms', 'title'=>'Пользовательское соглашение'], 
+            ['name'=>'policy', 'title'=>'Политика конфиденциальности']
+        ];
+        
+        $this->views['topmenu'] = $this->load_controller('menu', 'topmenu', $this->data);
+        $this->views['sidemenu'] = $this->load_controller('menu', 'sidemenu', $this->data);
+        // $this->views['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
+        $this->views['content'] = $this->load_view('plans');
+        $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
+
+        return $this->render($this->views);
+    }
+
     private function pagesetup(){
         $add_js = ['main.js'];
         $add_css = [

@@ -13,12 +13,12 @@ class Controller{
     public function __construct($extra = []){
         $this->data = $extra;
         // check for user logged in and user is owner
-        $pars = Application::$app->request->getQueryParams();
-        if(!array_key_exists('check',$pars)){
-            $t=time();
-            $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
-            throw new \Exception($msg, 410);
-        }
+        // $pars = Application::$app->request->getQueryParams();
+        // if(!array_key_exists('check',$pars)){
+        //     $t=time();
+        //     $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+        //     throw new \Exception($msg, 410);
+        // }
         
     }
 
