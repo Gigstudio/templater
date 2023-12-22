@@ -12,19 +12,19 @@
         <!-- <div class="toscroll">
             <?php
             for ($i=0; $i < 6; $i++) { 
-                echo '<div class="flash dot" style="animation-delay:'.(-1.6 + $i*0.2).'s;"></div>';
+                echo '<div class="flashdot dot" style="animation-delay:'.(-1.6 + $i*0.2).'s;"></div>';
             }
             ?>
         </div>
         <div class="toscroll" style="right: 0; align-items: flex-start;">
             <?php
             for ($i=0; $i < 6; $i++) { 
-                echo '<div class="flash dot" style="animation-delay:'.(-1.6 + $i*0.2).'s;"></div>';
+                echo '<div class="flashdot dot" style="animation-delay:'.(-1.6 + $i*0.2).'s;"></div>';
             }
             ?>
         </div> -->
     </div>
-    <div class="content">
+    <div class="content" id="land">
         {{ribbon}}
         <div class="main">
             {{content}}

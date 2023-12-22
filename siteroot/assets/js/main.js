@@ -4,7 +4,8 @@
     let logo = document.getElementById('logotype').getElementsByTagName('IMG')[0],
         topnav = document.getElementById('topmenu'),
         hamb = document.getElementById('hamburger'),
-        mainmenu = document.getElementById('main_links');
+        mainmenu = document.getElementById('main_links'),
+        scrollbutton = document.getElementById('scrolltocontent');
     newfile = changeLogo(window.innerWidth <= 1120 ? 'ticonred.png' : 'ttype.png');
     if(newfile) logo.src = newfile;
     setMenuVisibility(mainmenu, window.innerWidth > 800);
@@ -25,8 +26,6 @@
     document.addEventListener('scroll', ()=>{
         let limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
             document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
-        console.log(window.scrollY);
-        console.log(limit - window.innerHeight);
         topnav.classList.toggle('scrolled', window.scrollY > 0);
         if(window.innerWidth <=800) setMenuVisibility(mainmenu, false);
         if(window.innerWidth > 1120){
@@ -38,6 +37,13 @@
 
     document.addEventListener('click', (e)=>{
         let visible = window.getComputedStyle(mainmenu).getPropertyValue('display');
+        if(isNested(e.target, scrollbutton)){
+            window.scrollTo({
+                top: window.innerHeight,
+                left: 0,
+                behavior: "smooth",
+            });
+        }
         if(isNested(e.target, hamb)){
             setMenuVisibility(mainmenu, visible == 'none');
         }
