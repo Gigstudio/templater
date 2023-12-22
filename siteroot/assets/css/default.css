@@ -85,9 +85,7 @@ img{
 .toscroll{
     position: absolute;
     bottom: 0;
-    /* left: 0; */
     width: 140px;
-    /* padding: 20px 0; */
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -96,13 +94,12 @@ img{
     flex-direction: column;
     align-items: flex-end;
     gap: 30px;
-    /* background-color: var(--t01); */
 }
 .toscroll.lines{
     bottom: initial;
     width: 100px;
     top: 4px;
-    gap: 8px;
+    gap: 11px;
     align-items: center;
 }
 .flash{
@@ -118,7 +115,7 @@ img{
     height: 2px;
     border: solid 1px rgba(255,255,255,0.02);
     border-radius: 1px;
-    animation: growline 4s ease-in-out infinite;
+    animation: growline 5s ease-in-out infinite;
 }
 .searchblock{
     padding: 238px 0 60px;
@@ -697,7 +694,7 @@ img{
 }
 @keyframes growline{
     0% , 84% , 100%{
-        transform:scaleX(0.8);
+        transform:scaleX(0.6);
         background-color: rgba(255,255,255,0);
         border-color: rgba(255,255,255,0.02);
         box-shadow: none;
