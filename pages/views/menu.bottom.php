@@ -8,7 +8,7 @@ $active = $this->data['page'];//preg_replace('/index(.php|.html|)/i', '', $strin
             <div class="menu-holder flex-vertical">
                 <span class="h3">Пользователям</span>
                 <a class="menu-item<?=$active == 'plans' ? ' selected' : '' ?>" href="<?=HOME_URL.'plans'?>" id="plans"><span>Тарифы</span></a>
-                <a class="menu-item<?=$active == 'payment' ? ' selected' : '' ?>" href="<?=HOME_URL.'payment'?>" id="payment"><span>Способы оплаты</span></a>
+                <a class="menu-item<?=$active == 'payments' ? ' selected' : '' ?>" href="<?=HOME_URL.'payments'?>" id="payments"><span>Способы оплаты</span></a>
                 <a class="menu-item<?=$active == 'terms' ? ' selected' : '' ?>" href="<?=HOME_URL.'terms'?>" id="terms"><span>Пользовательское соглашение</span></a>
                 <a class="menu-item<?=$active == 'policy' ? ' selected' : '' ?>" href="<?=HOME_URL.'policy'?>" id="policy"><span>Политика конфиденциальности</span></a>
             </div>

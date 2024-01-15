@@ -20,7 +20,7 @@ use Templater\System\Engine\Application;
 		<div class="part left">
 		<?php if(file_exists(PATH_ASSETS . 'images/' . MAIN_LOGO_FILE)): 
 			echo '
-				<a class="menu-item" id="logotype">
+				<a href="'.HOME_URL.'" class="menu-item" id="logotype">
 					<span></span>
 					<img src="'.HOME_URL.'assets/images/' . MAIN_LOGO_FILE . '">
 				</a>';

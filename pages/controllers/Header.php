@@ -15,7 +15,7 @@ class Header extends Controller{
         $this->data['add_style'] = Application::$app->doc->getInlineStyles();
         $this->data['site_icon']  = HOME_URL . 'siteroot/assets/images/' . SITE_ICON_FILE;
 
-        $content = file_exists(PATH_VIEWS . "header.php") ? $this->render($this->data, 'header') : "";
+        $content = file_exists(PATH_VIEWS . "_header.php") ? $this->render($this->data, '_header') : "";
         return $content;
 	}
 }

@@ -1,7 +1,7 @@
-// TODO
-// 1. "Поймать" ширину экрана и подставить нужный файл логотипа!
+// TODO:
+
 (function(){
-    let logo = document.getElementById('logotype').getElementsByTagName('IMG')[0],
+    let logo = document.getElementById('logotype') ? document.getElementById('logotype').getElementsByTagName('IMG')[0] : null,
         topnav = document.getElementById('topmenu'),
         hamb = document.getElementById('hamburger'),
         mainmenu = document.getElementById('main_links'),
@@ -10,17 +10,46 @@
     if(newfile) logo.src = newfile;
     setMenuVisibility(mainmenu, window.innerWidth > 800);
 
+    let paycalc = document.forms['paycalc'];
+    if(paycalc){
+        paycalc.appearence = function(e, t){
+            let val = parseInt(e.value);
+            e.value = val < e.min ? e.min : val > e.max ? e.max : val;
+            t.value = (18 * 98 * (val - 2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            e.previousElementSibling.classList.toggle('disabled', val <= e.min);
+            e.nextElementSibling.classList.toggle('disabled', val >= e.max);
+        };
+
+        dec_btn = paycalc.children[0].children[0];
+        inc_btn = paycalc.children[0].children[2];
+        count_input = paycalc.children[0].children[1];
+        res_field = paycalc.children[1];
+        console.log(paycalc);
+
+        paycalc.appearence(count_input, res_field);
+
+        paycalc.addEventListener('click', (e)=>{
+            if(!isNested(e.target, paycalc.children[0])) return;
+            if(e.target == dec_btn) {
+                if(parseInt(count_input.value) > count_input.min) count_input.stepDown();
+                console.log(count_input.min)
+            }
+            if(e.target == inc_btn) {
+                if(parseInt(count_input.value) < count_input.max) count_input.stepUp();
+            }
+            paycalc.appearence(count_input, res_field);
+        });
+        count_input.onchange = ()=>{
+            paycalc.appearence(count_input, res_field);
+        };
+    }
+
     window.addEventListener("resize", function(){
         setMenuVisibility(mainmenu, window.innerWidth > 800);
         if(window.scrollY > 0) return;
         newfile = changeLogo(window.innerWidth <= 1120 ? 'ticonred.png' : 'ttype.png');
         if(!newfile) return;
         logo.src = newfile;
-        // for(o in menus){
-            // menus[o].rect = (menus[o].control && menus[o].states[menus[o].state].type == 'floating') ? menus[o].defineFloatingRect() : menus[o].defineStaticRect();
-            // menus[o].applyStyle(menus[o].rect);
-            // menus[o].initTriggers(e);
-        // }
     });
 
     document.addEventListener('scroll', ()=>{
@@ -36,29 +65,33 @@
     });
 
     document.addEventListener('click', (e)=>{
-        let visible = window.getComputedStyle(mainmenu).getPropertyValue('display');
-        if(scrollbutton && isNested(e.target, scrollbutton)){
-            window.scrollTo({
-                top: window.innerHeight,
-                left: 0,
-                behavior: "smooth",
-            });
-        }
-        if(isNested(e.target, hamb)){
-            setMenuVisibility(mainmenu, visible == 'none');
-        }
-        else{
-            setMenuVisibility(mainmenu, window.innerWidth > 800);
+        if(mainmenu){
+            let visible = window.getComputedStyle(mainmenu).getPropertyValue('display');
+            if(scrollbutton && isNested(e.target, scrollbutton)){
+                window.scrollTo({
+                    top: window.innerHeight,
+                    left: 0,
+                    behavior: "smooth",
+                });
+            }
+            if(isNested(e.target, hamb)){
+                setMenuVisibility(mainmenu, visible == 'none');
+            }
+            else{
+                setMenuVisibility(mainmenu, window.innerWidth > 800);
+            }
         }
     });
 
     function setMenuVisibility(target, flag){
+        if(!target) return;
         target.style.display = flag ? 'flex' : 'none';
     }
 
     function changeLogo(file){
-        let logo = document.getElementById('logotype').getElementsByTagName('IMG')[0],
-            srcfile = logo.src.split('/'),
+        let logoimg = document.getElementById('logotype') ? document.getElementById('logotype').getElementsByTagName('IMG')[0] : null;
+        if(!logoimg) return;
+        let srcfile = logoimg.src.split('/'),
             elNum = srcfile.length-1,
             newName = '';
         if(srcfile[elNum] == file) return;

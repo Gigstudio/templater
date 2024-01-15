@@ -22,12 +22,14 @@ $get = [
     SITE_SHORT_NAME.'/cooperation'  => [Home::class, 'cooperation'],
     SITE_SHORT_NAME.'/bankdetails'  => [Home::class, 'bankdetails'],
     SITE_SHORT_NAME.'/feedback'     => [Home::class, 'feedback'],
-    // SITE_SHORT_NAME.'/login'        => [Auth::class, 'login'],
-
+    SITE_SHORT_NAME.'/login'        => [Auth::class, 'login'],
+    SITE_SHORT_NAME.'/register'     => [Auth::class, 'register'],
+     // SITE_SHORT_NAME.'/login'        => [Auth::class, 'login', ['page' => 'login']],
+    SITE_SHORT_NAME.'/migrate'      => [Admin::class, 'migration'],
 ];
 $post = [
     SITE_SHORT_NAME.'/feedback'     => [Home::class, 'feedback'],
-    // SITE_SHORT_NAME.'/login'        => [Auth::class, 'login'],
+    SITE_SHORT_NAME.'/login'        => [Auth::class, 'login'],
 ];
 // $routes = [
 //     ['get',	SITE_SHORT_NAME.'/', [Home::class, 'home']],

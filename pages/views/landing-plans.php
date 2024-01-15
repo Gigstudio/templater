@@ -43,17 +43,23 @@ $active = $this->data['page'];
                 <span class="h2">В любой момент Вы можете начать дополнительные проекты.</span>
                 <span class="h2" style="color: var(--c28);">Расчет стоимости:</span>
                 <div class="landing-row inline">
-                    <div class="land-info" style="gap: 12px; justify-content: space-between; padding: 16px 0; flex-grow: 0; min-width: 180px;">
-                        <span class="info additional" style="width: 100%; text-align: right;">Количество доступных проектов:</span>
-                        <span class="info additional" style="width: 100%; text-align: right;">Стоимость годовой подписки:</span>
+                    <div class="land-info" style="gap: 12px; justify-content: space-between; padding: 16px 0; flex-grow: 0; min-width: 250px;">
+                        <span class="info additional" style="width: 100%; text-align: right; font-size: 12px;">Количество доступных проектов:</span>
+                        <span class="info additional" style="width: 100%; text-align: right; font-size: 12px;">Стоимость годовой подписки:</span>
                     </div>
-                    <form class="adv border" style="padding: 0; gap: 0; flex-grow: 0; min-width: 180px;">
-                        <div class="counter">
-                            <input class="input-counter" type="number" value="2" name="quantity" min="2" max="20" />
+                    <form class="adv border" id="counterform" name="paycalc">
+                        <div class="counter" style="border-radius: 12px 12px 0 0;">
+                            <button class="counter-control number-minus disabled" type="button">-</button>
+                            <input class="input-counter" type="number" value="12" name="quantity" min="2" max="20" />
+                            <button class="counter-control number-plus" type="button">+</button>
                         </div>
-                        <input class="input-text" type="text" value="0" name="total"/>
+                        <input class="input-text" type="text" value="0" name="total" disabled style="border-radius: 0 0 12px 12px;"/>
                     </form>
                 </div>
+                <a href="<?=HOME_URL.'login?action=register'?>" class="button green">
+                    <span>подключить</span>
+                    <i class="fa-solid fa-check"></i>
+                </a>
             </div>
         </div>
     </div>

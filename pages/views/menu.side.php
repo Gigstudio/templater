@@ -3,6 +3,7 @@ use Templater\System\Engine\Application;
 $string = substr(Application::$app->request->getUrl(),strlen(SITE_SHORT_NAME)+2);
 $active = $this->data['page'];
 ?>
+
 <ul class="navigation side">
 <?php 
 if(array_key_exists('sidemenuitems', $this->data)){

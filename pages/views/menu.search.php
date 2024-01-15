@@ -1,3 +1,4 @@
+
 <div class="block header">
     <div class="searchblock">
         <div class="search-header">Найти мои сертификаты</div>
@@ -11,7 +12,7 @@
             <div class="toscroll lines">
             <?php
             for ($i=0; $i < 3; $i++) { 
-                echo '<div class="flashdot line" style="animation-delay:'.(-1.6 + $i*0.3).'s;"></div>';
+                echo '<div class="flashdot growline" style="animation-delay:'.(-1.6 + $i*0.3).'s;"></div>';
             }
             ?>
         </div>

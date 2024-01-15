@@ -49,3 +49,4 @@ defined('MAIN_LOGO_FILE') or 	define('MAIN_LOGO_FILE', 'ttype.png');
 defined('SITE_ICON_FILE') or 	define('SITE_ICON_FILE', 'ticoncolor.svg');
 
 defined('ENVIRONMENT') or 		define('ENVIRONMENT', 'development');
+// defined('ENVIRONMENT') or 		define('ENVIRONMENT', 'deploy');

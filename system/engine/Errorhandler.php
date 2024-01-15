@@ -25,7 +25,9 @@ class Errorhandler{
         $this->log_file = PATH_LOGS . 'log_' . date("Y-m-d") . '.log';
         $this->error_display = ENVIRONMENT == 'development';
         $this->setLang('ru');
-        $this->set_handler();
+		if(false === $this->error_display){
+        	$this->set_handler();
+		}
     }
 
     public function set_handler(){

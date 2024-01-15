@@ -7,7 +7,7 @@ class Document{
 	private string $title = '';
 	private string $description = '';
 	private string $keywords = '';
-	private array $links = [];
+	// private array $links = [];
 	private array $css_styles = [];
 	private array $inline_styles = [];
 	private array $scripts = [];

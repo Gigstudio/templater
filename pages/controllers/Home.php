@@ -17,10 +17,10 @@ class Home extends Controller{
         $relpath = 'assets/images/miniatures/';
         $this->data['slides'] = $this->get_files($abspath, $relpath, ['jpg', 'jpeg']);
         
-        $this->views['topmenu'] = $this->load_controller('menu', 'topmenu', $this->data);
+        $this->views['topmenu'] = $this->load_controller('menu', 'topmain', $this->data);
         $this->views['search'] = $this->load_controller('menu', 'search', $this->data);
         // $this->views['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
-        $this->views['content'] = $this->load_view('home');
+        $this->views['content'] = $this->load_view('landing-home');
         $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
 
         return $this->render($this->views);
@@ -35,13 +35,126 @@ class Home extends Controller{
             ['name'=>'policy', 'title'=>'Политика конфиденциальности']
         ];
         
-        $this->views['topmenu'] = $this->load_controller('menu', 'topmenu', $this->data);
-        $this->views['sidemenu'] = $this->load_controller('menu', 'sidemenu', $this->data);
+        $this->views['topmenu'] = $this->load_controller('menu', 'topmain', $this->data);
+        $this->views['sidemenu'] = $this->load_controller('menu', 'side', $this->data);
         // $this->views['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
-        $this->views['content'] = $this->load_view('plans');
+        $this->views['content'] = $this->load_view('landing-plans');
         $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
 
         return $this->render($this->views);
+    }
+
+    public function payments($request){
+        $this->data['page'] = 'payments';
+        $this->data['sidemenuitems'] = [
+            ['name'=>'plans', 'title'=>'Тарифы'], 
+            ['name'=>'payments', 'title'=>'Способы оплаты'], 
+            ['name'=>'terms', 'title'=>'Пользовательское соглашение'], 
+            ['name'=>'policy', 'title'=>'Политика конфиденциальности']
+        ];
+        
+        $this->views['topmenu'] = $this->load_controller('menu', 'topmain', $this->data);
+        $this->views['sidemenu'] = $this->load_controller('menu', 'side', $this->data);
+        // $this->views['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
+        $this->views['content'] = $this->load_view('landing-payments');
+        $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
+
+        return $this->render($this->views);
+    }
+
+    public function terms($request){
+            $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+            throw new \Exception($msg, 410);
+        $this->data['page'] = 'terms';
+        $this->data['sidemenuitems'] = [
+            ['name'=>'plans', 'title'=>'Тарифы'], 
+            ['name'=>'payments', 'title'=>'Способы оплаты'], 
+            ['name'=>'terms', 'title'=>'Пользовательское соглашение'], 
+            ['name'=>'policy', 'title'=>'Политика конфиденциальности']
+        ];
+        
+        $this->views['topmenu'] = $this->load_controller('menu', 'topmain', $this->data);
+        $this->views['sidemenu'] = $this->load_controller('menu', 'side', $this->data);
+        // $this->views['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
+        $this->views['content'] = $this->load_view('landing-terms');
+        $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
+
+        return $this->render($this->views);
+    }
+
+    public function policy($request){
+            $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+            throw new \Exception($msg, 410);
+        $this->data['page'] = 'policy';
+        $this->data['sidemenuitems'] = [
+            ['name'=>'plans', 'title'=>'Тарифы'], 
+            ['name'=>'payments', 'title'=>'Способы оплаты'], 
+            ['name'=>'terms', 'title'=>'Пользовательское соглашение'], 
+            ['name'=>'policy', 'title'=>'Политика конфиденциальности']
+        ];
+        
+        $this->views['topmenu'] = $this->load_controller('menu', 'topmain', $this->data);
+        $this->views['sidemenu'] = $this->load_controller('menu', 'side', $this->data);
+        // $this->views['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
+        $this->views['content'] = $this->load_view('landing-policy');
+        $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
+
+        return $this->render($this->views);
+    }
+
+    public function startuse($request){
+            $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+            throw new \Exception($msg, 410);
+        $this->data['page'] = 'startuse';
+        $this->data['sidemenuitems'] = [
+            ['name'=>'plans', 'title'=>'Тарифы'], 
+            ['name'=>'payments', 'title'=>'Способы оплаты'], 
+            ['name'=>'terms', 'title'=>'Пользовательское соглашение'], 
+            ['name'=>'policy', 'title'=>'Политика конфиденциальности']
+        ];
+        
+        $this->views['topmenu'] = $this->load_controller('menu', 'topmain', $this->data);
+        $this->views['sidemenu'] = $this->load_controller('menu', 'side', $this->data);
+        // $this->views['usermenu'] = $this->load_controller('menu', 'usermenu', $this->data);
+        $this->views['content'] = $this->load_view('landing-startuse');
+        $this->views['bottom'] = $this->load_controller('menu', 'bottom', $this->data);
+
+        return $this->render($this->views);
+    }
+
+    public function capabilities($request){
+        $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+        throw new \Exception($msg, 410);
+    }
+
+    public function templates($request){
+        $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+        throw new \Exception($msg, 410);
+    }
+
+    public function lists($request){
+        $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+        throw new \Exception($msg, 410);
+    }
+
+    public function about($request){
+        $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+        throw new \Exception($msg, 410);
+    }
+
+    public function cooperation($request){
+        $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+        throw new \Exception($msg, 410);
+    }
+
+    public function bankdetails($request){
+        $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+        throw new \Exception($msg, 410);
+    }
+
+    public function feedback($request){
+        $msg = 'Извините, страница находится на стадии разработки. Работа сервиса будет восстановлена в ближайшее время!';
+        throw new \Exception($msg, 410);
     }
 
     private function pagesetup(){
