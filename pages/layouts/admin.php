@@ -9,7 +9,7 @@
     <div class="content" id="admin">
         {{sidenavigator}}
         <div class="main">
-            {{addmenu}}
+            {{topmenu}}
             {{content}}
         </div>
     </div>

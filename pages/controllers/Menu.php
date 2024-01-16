@@ -21,7 +21,7 @@ class Menu extends Controller{
     }
 
     public function topadmin(){
-        $this->data['mainmenu'] = $this->load_controller('menu', 'mainadmin', $this->data);
+        $this->data['searchfield'] = $this->load_view('searchfield');
         
         $content = file_exists(PATH_VIEWS . "menu.topadmin.php") ? $this->render($this->data, 'menu.topadmin') : "";
         return $content;
@@ -49,6 +49,11 @@ class Menu extends Controller{
 
 	public function side(){
         $content = file_exists(PATH_VIEWS . "menu.side.php") ? $this->render($this->data, 'menu.side') : "";
+        return $content;
+	}
+
+	public function sideadmin(){
+        $content = file_exists(PATH_VIEWS . "menu.sideadmin.php") ? $this->render($this->data, 'menu.sideadmin') : "";
         return $content;
 	}
 

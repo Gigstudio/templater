@@ -81,6 +81,10 @@ img{
     background-position: center top;
     background-image: url('../images/header_bg1.jpg');
 }
+.content{
+    font-family: 'Comfortaa', sans-serif;
+    line-height: 130%;
+}
 .toscroll{
     position: absolute;
     bottom: 0;
@@ -192,23 +196,31 @@ img{
     padding: 16px;
 }
 .search-box{
-    padding: 0 20px;
+    padding: 0 44px 0 20px;
     position: relative;
     background: var(--c01);
-    border: medium none;
-    border-radius: 8px;
-    font-size: 1rem;
-    /* font-size: 16px; */
+    border: solid 1px var(--c08);
+    border-radius: 4px;
+    font-size: 1em;
     font-weight: 300;
-    height: 44px;
+    height: 36px;
     width: 100%;
     outline: medium none;
-    box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.2);
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg");
-    background-size: 14px;
-    background-repeat: no-repeat;
-    background-position: 432px;
+    box-shadow: inset 0 0 4px 0px rgba(0,0,0,0.2);
+    /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg"); */
+    /* background-size: 14px; */
+    /* background-repeat: no-repeat; */
+    /* background-position: 432px; */
     animation: blink .7s ease-in-out 5;
+}
+.search-field::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    width: 14px;
+    background: url("../images/Magnifying_glass_icon.svg") center / contain no-repeat;
 }
 .big-errorheader{
     margin: 80px auto 0;
@@ -249,7 +261,7 @@ img{
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1em;
     /* font-size: 16px; */
     transition: all 0.3s;
 }
@@ -261,9 +273,6 @@ img{
     -moz-box-shadow: 0px 0px 16px 2px rgba(0,0,0,0.4);
     box-shadow: 0px 0px 16px 2px rgba(0,0,0,0.4);
     z-index: 5;
-}
-#admintop{
-    height: 56px;
 }
 .side{
     flex-direction: column;
@@ -500,6 +509,7 @@ img{
     text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FF952D 0px 0px 20px, #FF952D 0px 0px 30px, #FF952D 0px 0px 40px;
 }
 .menu-item i{
+    min-width: 24px;
     margin: 0 6px 6px;
     position: relative;
     top: 4px;
@@ -517,10 +527,6 @@ img{
 #hamburger{
     padding: 0;
     display: none;
-}
-.content{
-    font-family: 'Comfortaa', sans-serif;
-    line-height: 130%;
 }
 .landing-row{
     position: relative;
@@ -761,6 +767,10 @@ img{
     padding: 8px 0;
 }
 
+.part.left{
+    position: relative;
+    width: 100%;
+}
 .part.left .menu-holder{
     align-items: flex-start;
 }

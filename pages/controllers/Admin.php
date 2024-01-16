@@ -13,15 +13,38 @@ class Admin extends Controller{
         $this->pagesetup();
     }
 
-    public function migration(Request $request, Response $response){
-        $this->data['page'] = 'migration';
-        
-        $this->views['topmenu'] = $this->load_controller('menu', 'topadmin', $this->data);
-        // $this->views['search'] = $this->load_controller('menu', 'search', $this->data);
-        $this->views['content'] = $this->load_view('admin-migrate');
-        $this->views['bottom'] = $this->load_controller('menu', 'bottomadmin', $this->data);
+    public function dashboard(Request $request, Response $response){
+        $this->data['page'] = 'dashboard';
+
+        $this->common();
+        $this->views['content'] = $this->load_view('admin-dashboard');
 
         return $this->render($this->views);
+    }
+
+    public function userlist(Request $request, Response $response){
+        $this->data['page'] = 'userlist';
+
+        $this->common();
+        $this->views['content'] = $this->load_view('admin-userlist');
+
+        return $this->render($this->views);
+    }
+
+    public function database(Request $request, Response $response){
+        $this->data['page'] = 'database';
+
+        $this->common();
+        $this->views['content'] = $this->load_view('admin-database');
+
+        return $this->render($this->views);
+    }
+
+    private function common(){
+        // $this->views['search'] = $this->load_controller('menu', 'search', $this->data);
+        $this->views['sidenavigator'] = $this->load_controller('menu', 'sideadmin', $this->data);
+        $this->views['topmenu'] = $this->load_controller('menu', 'topadmin', $this->data);
+        $this->views['bottom'] = $this->load_controller('menu', 'bottomadmin', $this->data);
     }
 
     private function pagesetup(){
@@ -29,6 +52,13 @@ class Admin extends Controller{
             // $this->data['user'] = $User->getCurrent()[0];
             // check if user have admin perrmission, if no - redirect to index or ...
         // }
+        $this->data['sidemenuitems'] = [
+            ['name'=>'dashboard', 'title'=>'Обзор', 'icon'=>'fa-solid fa-chart-pie'], 
+            ['name'=>'userlist', 'title'=>'Пользователи', 'icon'=>'fa-solid fa-users'], 
+            ['name'=>'database', 'title'=>'База данных', 'icon'=>'fa-solid fa-database'], 
+            ['name'=>'stat', 'title'=>'Статистика', 'icon'=>'fa-solid fa-chart-column'], 
+            ['name'=>'settings', 'title'=>'Настройки', 'icon'=>'fa-solid fa-gears'], 
+        ];
 
         $this->data['error'] = [];
         $this->data['user_input'] = [];

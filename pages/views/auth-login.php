@@ -1,5 +1,4 @@
 <?php
-
 $switchon = $this->data['activeform'] == 'register';
 
 $error_field = ($this->data['error'] && count($this->data['error'])) > 0 ? array_keys($this->data['error'])[0] : false;

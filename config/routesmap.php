@@ -25,7 +25,9 @@ $get = [
     SITE_SHORT_NAME.'/login'        => [Auth::class, 'login'],
     SITE_SHORT_NAME.'/register'     => [Auth::class, 'register'],
      // SITE_SHORT_NAME.'/login'        => [Auth::class, 'login', ['page' => 'login']],
-    SITE_SHORT_NAME.'/migrate'      => [Admin::class, 'migration'],
+    SITE_SHORT_NAME.'/userlist'        => [Admin::class, 'userlist'],
+    SITE_SHORT_NAME.'/database'     => [Admin::class, 'database'],
+    SITE_SHORT_NAME.'/dashboard'    => [Admin::class, 'dashboard'],
 ];
 $post = [
     SITE_SHORT_NAME.'/feedback'     => [Home::class, 'feedback'],
