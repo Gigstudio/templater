@@ -49,3 +49,39 @@ medium          500
 regular         400
 light           200
 thin            100
+
+css compatibility:
+
+	-o-transition: all 0.2s;	
+	-ms-transition: all 0.2s;	
+	-moz-transition: all 0.2s;	
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+
+    -o-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    -moz-transform: translateX(40px);
+    -webkit-transform: translateX(40px);
+    transform: translateX(40px);
+
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-box-shadow: 0px 0px 16px 2px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 16px 2px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 16px 2px rgba(0,0,0,0.4);
+
+    -webkit-mask-image: url('../images/ticoncolor.png');
+    mask-image: url('../images/ticoncolor.png');
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;

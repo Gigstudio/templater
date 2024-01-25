@@ -1,11 +1,11 @@
 :root{
 /* half opacity */
-    --t01: #ffffff90;
+    --t01: #ffffff77;
     --t02: #ffffffE5;
     --t03: #665a52DD;
     --t04: #e9214a77;
     --t05: #032624DD;
-    --t06: #ABDBFF55;
+    --t06: #ABDBFF77;
     --t07: #0a1b47BB;
     --t08: #4f3516BB;
     --t09: #ABFFBABC;
@@ -33,7 +33,7 @@
     --c16: #3a4f78;
     --c17: #93712f;
     --c18: #86B6FF; 
-    --c19: #2c6ccc; 
+    --c19: #2b82d9; 
     --c20: #ABDBFF; 
     --c21: #f6f5f9;
     --c22: #f1e4f3;
